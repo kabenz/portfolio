@@ -97,6 +97,7 @@ export default function ProfileCard({ profile }) {
               className="profile-card__social-btn"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile"
             >
               <GitHubIcon />
               <span>GitHub</span>
@@ -108,6 +109,7 @@ export default function ProfileCard({ profile }) {
               className="profile-card__social-btn"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
             >
               <LinkedInIcon />
               <span>LinkedIn</span>
