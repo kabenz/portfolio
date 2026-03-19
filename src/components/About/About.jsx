@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react'
 import './About.css'
 
 const highlights = [
-  { icon: '🚀', title: 'Automation First', desc: 'CI/CD pipelines and infrastructure as code to eliminate toil and ship faster' },
-  { icon: '☁️', title: 'Cloud Native', desc: 'Deep expertise across AWS, GCP and Azure — designing resilient, cost-efficient architectures' },
-  { icon: '🔒', title: 'Security & Reliability', desc: 'SRE mindset: SLOs, observability, incident management and zero-downtime deployments' },
-  { icon: '🤝', title: 'Platform Builder', desc: 'Creating self-service developer platforms that accelerate delivery across engineering teams' },
+  { icon: '🚀', title: 'Automation First', desc: 'CI/CD with GitHub Actions and Azure Pipelines — eliminating toil and accelerating delivery' },
+  { icon: '☁️', title: 'Azure Expert', desc: 'Deep hands-on experience with Azure services, AKS, and cloud-native architectures' },
+  { icon: '🔒', title: 'Security & Reliability', desc: 'GitOps with FluxCD, zero-downtime deployments, and robust observability with Prometheus & Grafana' },
+  { icon: '🤝', title: 'Platform Builder', desc: 'Building self-service developer platforms on Kubernetes with Helm, Terraform, and Cloudflare' },
 ]
 
 export default function About() {
@@ -70,16 +70,16 @@ export default function About() {
               Building platforms that <span className="about__heading-accent">enable engineering teams to thrive</span>
             </h3>
             <p className="about__bio">
-              I&apos;m a DevOps &amp; Cloud Engineer with 7+ years of experience designing and operating
-              large-scale infrastructure on AWS, GCP, and Azure. My core focus is on Platform
-              Engineering and Cloud Architecture — creating the foundations that let product teams
-              ship with confidence.
+              I&apos;m a Platform Engineer with 7+ years of experience designing and operating
+              cloud-native infrastructure on Azure. My core focus is Platform Engineering —
+              building the internal tooling, GitOps workflows, and Kubernetes-based platforms
+              that let product teams ship with confidence and without ops friction.
             </p>
             <p className="about__bio">
-              I live and breathe Kubernetes, Terraform, and CI/CD. Whether it&apos;s migrating monoliths
-              to microservices, designing GitOps workflows, or building self-service developer
-              platforms, I bring an automation-first mindset to every problem. Backend and
-              Frontend are skills I also leverage to better understand and serve the engineers I work with.
+              I work daily with Kubernetes, Helm, Terraform, FluxCD, and Azure. I automate
+              everything with GitHub Actions, Azure Pipelines, Python, Bash, and PowerShell,
+              and I keep systems observable with Prometheus, Grafana, and the ELK stack.
+              Backend and frontend skills in Go and JavaScript round out my toolkit.
             </p>
 
             <div className="about__highlights">

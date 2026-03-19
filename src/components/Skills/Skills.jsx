@@ -3,45 +3,44 @@ import './Skills.css'
 
 const skillCategories = [
   {
-    id: 'devops',
-    label: 'DevOps & Cloud',
+    id: 'cloud-infra',
+    label: 'Cloud & Infrastructure',
     icon: '☁️',
     color: '#6c63ff',
     skills: [
-      { name: 'Kubernetes', level: 94, icon: '⎈' },
+      { name: 'Azure', level: 94, icon: '🔷' },
+      { name: 'Kubernetes (AKS)', level: 95, icon: '⎈' },
       { name: 'Terraform', level: 92, icon: '🏗️' },
-      { name: 'AWS', level: 90, icon: '☁️' },
       { name: 'Docker', level: 96, icon: '🐋' },
-      { name: 'CI/CD (GitHub Actions / GitLab)', level: 93, icon: '🔄' },
-      { name: 'Ansible', level: 85, icon: '🤖' },
+      { name: 'Helm', level: 90, icon: '⚓' },
+      { name: 'Cloudflare', level: 82, icon: '🌐' },
     ],
   },
   {
-    id: 'platform',
-    label: 'Platform & Observability',
-    icon: '📡',
+    id: 'cicd-gitops',
+    label: 'CI/CD & GitOps',
+    icon: '🔄',
     color: '#ff6584',
     skills: [
+      { name: 'GitHub Actions', level: 93, icon: '🐙' },
+      { name: 'Azure Pipelines', level: 92, icon: '🔵' },
+      { name: 'FluxCD', level: 88, icon: '🚀' },
       { name: 'Prometheus / Grafana', level: 90, icon: '📊' },
-      { name: 'Helm', level: 88, icon: '⚓' },
-      { name: 'ArgoCD / Flux', level: 86, icon: '🚀' },
-      { name: 'Istio / Service Mesh', level: 80, icon: '🕸️' },
-      { name: 'Vault (HashiCorp)', level: 82, icon: '🔐' },
-      { name: 'GCP / Azure', level: 78, icon: '🌐' },
+      { name: 'ELK Stack', level: 84, icon: '🔍' },
+      { name: 'YAML', level: 96, icon: '📄' },
     ],
   },
   {
-    id: 'dev',
-    label: 'Backend & Frontend',
+    id: 'languages',
+    label: 'Languages & Scripting',
     icon: '💻',
     color: '#43e8d8',
     skills: [
-      { name: 'Python', level: 85, icon: '🐍' },
-      { name: 'Go', level: 76, icon: '🐹' },
-      { name: 'Node.js', level: 78, icon: '🟩' },
-      { name: 'React', level: 72, icon: '⚛️' },
-      { name: 'PostgreSQL', level: 80, icon: '🐘' },
-      { name: 'REST / gRPC APIs', level: 88, icon: '🔌' },
+      { name: 'Python', level: 88, icon: '🐍' },
+      { name: 'Bash', level: 92, icon: '🖥️' },
+      { name: 'PowerShell', level: 86, icon: '🔷' },
+      { name: 'Go', level: 74, icon: '🐹' },
+      { name: 'JavaScript', level: 76, icon: '🟨' },
     ],
   },
 ]
@@ -105,7 +104,7 @@ export default function Skills() {
           <p className="section-label">My Skills</p>
           <h2 className="section-title">Technologies I Work With</h2>
           <p className="section-subtitle">
-            Cloud-native infrastructure, DevOps tooling, and platform engineering — with backend & frontend as a plus
+            Azure-native platform engineering, GitOps automation, and observability — with scripting &amp; development as a plus
           </p>
         </div>
 

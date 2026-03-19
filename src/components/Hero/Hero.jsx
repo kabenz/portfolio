@@ -1,35 +1,30 @@
 import { useEffect, useRef, useState } from 'react'
 import './Hero.css'
 
-const roles = ['DevOps Engineer', 'Cloud Engineer', 'Platform Engineer', 'Site Reliability Engineer']
+const ROLE = 'Platform Engineer'
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('')
-  const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const timeoutRef = useRef(null)
 
   useEffect(() => {
-    const currentRole = roles[roleIndex]
     const speed = isDeleting ? 60 : 100
 
-    if (!isDeleting && displayText === currentRole) {
-      timeoutRef.current = setTimeout(() => setIsDeleting(true), 2000)
+    if (!isDeleting && displayText === ROLE) {
+      timeoutRef.current = setTimeout(() => setIsDeleting(true), 3000)
     } else if (isDeleting && displayText === '') {
-      timeoutRef.current = setTimeout(() => {
-        setIsDeleting(false)
-        setRoleIndex(i => (i + 1) % roles.length)
-      }, 400)
+      timeoutRef.current = setTimeout(() => setIsDeleting(false), 600)
     } else {
       timeoutRef.current = setTimeout(() => {
         setDisplayText(prev =>
-          isDeleting ? prev.slice(0, -1) : currentRole.slice(0, prev.length + 1)
+          isDeleting ? prev.slice(0, -1) : ROLE.slice(0, prev.length + 1)
         )
       }, speed)
     }
 
     return () => clearTimeout(timeoutRef.current)
-  }, [displayText, isDeleting, roleIndex])
+  }, [displayText, isDeleting])
 
   const handleScrollToProjects = e => {
     e.preventDefault()
@@ -82,8 +77,8 @@ export default function Hero() {
 
         <div className="hero__stats fade-in visible">
           <div className="hero__stat">
-            <span className="hero__stat-value">7+</span>
-            <span className="hero__stat-label">Years Experience</span>
+            <span className="hero__stat-value">Azure</span>
+            <span className="hero__stat-label">Primary Cloud</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
@@ -92,8 +87,8 @@ export default function Hero() {
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-value">3</span>
-            <span className="hero__stat-label">Cloud Providers</span>
+            <span className="hero__stat-value">7+</span>
+            <span className="hero__stat-label">Years Experience</span>
           </div>
         </div>
       </div>
