@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './Hero.css'
 
-const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Open Source Contributor', 'Problem Solver']
+const roles = ['DevOps Engineer', 'Cloud Engineer', 'Platform Engineer', 'Site Reliability Engineer']
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('')
@@ -52,7 +52,7 @@ export default function Hero() {
         </div>
 
         <h1 className="hero__name fade-in visible">
-          Hi, I&apos;m <span className="hero__name-gradient">Jane Doe</span>
+          Hi, I&apos;m <span className="hero__name-gradient">José Perdigão</span>
         </h1>
 
         <h2 className="hero__role fade-in visible">
@@ -61,8 +61,8 @@ export default function Hero() {
         </h2>
 
         <p className="hero__tagline fade-in visible">
-          I craft elegant digital experiences that merge beautiful design
-          with performant, maintainable code.
+          I build the infrastructure that keeps software running at scale —
+          automating everything, breaking nothing.
         </p>
 
         <div className="hero__cta fade-in visible">
@@ -82,18 +82,18 @@ export default function Hero() {
 
         <div className="hero__stats fade-in visible">
           <div className="hero__stat">
-            <span className="hero__stat-value">5+</span>
+            <span className="hero__stat-value">7+</span>
             <span className="hero__stat-label">Years Experience</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-value">30+</span>
-            <span className="hero__stat-label">Projects Completed</span>
+            <span className="hero__stat-value">50+</span>
+            <span className="hero__stat-label">Pipelines Automated</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-value">10+</span>
-            <span className="hero__stat-label">Happy Clients</span>
+            <span className="hero__stat-value">3</span>
+            <span className="hero__stat-label">Cloud Providers</span>
           </div>
         </div>
       </div>

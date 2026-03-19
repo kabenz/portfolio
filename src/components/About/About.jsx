@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react'
 import './About.css'
 
 const highlights = [
-  { icon: '🎯', title: 'Goal Oriented', desc: 'Focused on delivering results that align with business objectives' },
-  { icon: '🤝', title: 'Collaborative', desc: 'Thriving in team environments and cross-functional collaboration' },
-  { icon: '⚡', title: 'Performance', desc: 'Obsessed with writing fast, efficient, and maintainable code' },
-  { icon: '🎨', title: 'Design Eye', desc: 'Bridging the gap between design and technical implementation' },
+  { icon: '🚀', title: 'Automation First', desc: 'CI/CD pipelines and infrastructure as code to eliminate toil and ship faster' },
+  { icon: '☁️', title: 'Cloud Native', desc: 'Deep expertise across AWS, GCP and Azure — designing resilient, cost-efficient architectures' },
+  { icon: '🔒', title: 'Security & Reliability', desc: 'SRE mindset: SLOs, observability, incident management and zero-downtime deployments' },
+  { icon: '🤝', title: 'Platform Builder', desc: 'Creating self-service developer platforms that accelerate delivery across engineering teams' },
 ]
 
 export default function About() {
@@ -26,9 +26,9 @@ export default function About() {
       <div className="container">
         <div className="section-header fade-in">
           <p className="section-label">About Me</p>
-          <h2 className="section-title">The Person Behind the Code</h2>
+          <h2 className="section-title">The Engineer Behind the Platform</h2>
           <p className="section-subtitle">
-            Passionate developer with a love for creating meaningful digital experiences
+            DevOps & Cloud professional passionate about building reliable, scalable infrastructure
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function About() {
                     <circle cx="100" cy="80" r="40" fill="rgba(108,99,255,0.2)" stroke="rgba(108,99,255,0.5)" strokeWidth="2"/>
                     <path d="M40 170 Q40 130 100 130 Q160 130 160 170" fill="rgba(108,99,255,0.15)" stroke="rgba(108,99,255,0.4)" strokeWidth="2"/>
                   </svg>
-                  <span className="about__avatar-initials">JD</span>
+                  <span className="about__avatar-initials">JP</span>
                 </div>
               </div>
               <div className="about__image-decoration about__image-decoration--1" />
@@ -52,32 +52,34 @@ export default function About() {
             <div className="about__quick-facts">
               <div className="about__fact">
                 <span className="about__fact-icon">📍</span>
-                <span>San Francisco, CA</span>
+                <span>Portugal</span>
               </div>
               <div className="about__fact">
                 <span className="about__fact-icon">💼</span>
-                <span>Open to Work</span>
+                <span>Open to Opportunities</span>
               </div>
               <div className="about__fact">
                 <span className="about__fact-icon">🎓</span>
-                <span>CS Degree</span>
+                <span>Computer Engineering</span>
               </div>
             </div>
           </div>
 
           <div className="about__content fade-in">
             <h3 className="about__heading">
-              Building the web, <span className="about__heading-accent">one component at a time</span>
+              Building platforms that <span className="about__heading-accent">enable engineering teams to thrive</span>
             </h3>
             <p className="about__bio">
-              I&apos;m a full-stack developer with 5+ years of experience crafting web applications
-              that users love. My journey started with a curiosity about how websites work and
-              evolved into a passion for creating seamless digital experiences.
+              I&apos;m a DevOps &amp; Cloud Engineer with 7+ years of experience designing and operating
+              large-scale infrastructure on AWS, GCP, and Azure. My core focus is on Platform
+              Engineering and Cloud Architecture — creating the foundations that let product teams
+              ship with confidence.
             </p>
             <p className="about__bio">
-              I specialize in JavaScript ecosystems — React on the frontend and Node.js on the
-              backend — but I&apos;m always exploring new technologies. When I&apos;m not coding, you&apos;ll
-              find me contributing to open source, hiking in the mountains, or brewing the perfect cup of coffee.
+              I live and breathe Kubernetes, Terraform, and CI/CD. Whether it&apos;s migrating monoliths
+              to microservices, designing GitOps workflows, or building self-service developer
+              platforms, I bring an automation-first mindset to every problem. Backend and
+              Frontend are skills I also leverage to better understand and serve the engineers I work with.
             </p>
 
             <div className="about__highlights">

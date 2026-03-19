@@ -49,7 +49,7 @@ export default function Header() {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container container">
         <a href="#home" className="header__logo" onClick={e => handleNavClick(e, '#home')}>
-          <span className="header__logo-text">JD</span>
+          <span className="header__logo-text">JP</span>
           <span className="header__logo-dot" />
         </a>
 

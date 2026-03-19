@@ -3,45 +3,45 @@ import './Skills.css'
 
 const skillCategories = [
   {
-    id: 'frontend',
-    label: 'Frontend',
-    icon: '🎨',
+    id: 'devops',
+    label: 'DevOps & Cloud',
+    icon: '☁️',
     color: '#6c63ff',
     skills: [
-      { name: 'React', level: 95, icon: '⚛️' },
-      { name: 'TypeScript', level: 88, icon: '📘' },
-      { name: 'JavaScript', level: 95, icon: '🟨' },
-      { name: 'CSS / Sass', level: 90, icon: '🎨' },
-      { name: 'Next.js', level: 82, icon: '▲' },
-      { name: 'Vue.js', level: 70, icon: '💚' },
+      { name: 'Kubernetes', level: 94, icon: '⎈' },
+      { name: 'Terraform', level: 92, icon: '🏗️' },
+      { name: 'AWS', level: 90, icon: '☁️' },
+      { name: 'Docker', level: 96, icon: '🐋' },
+      { name: 'CI/CD (GitHub Actions / GitLab)', level: 93, icon: '🔄' },
+      { name: 'Ansible', level: 85, icon: '🤖' },
     ],
   },
   {
-    id: 'backend',
-    label: 'Backend',
-    icon: '⚙️',
+    id: 'platform',
+    label: 'Platform & Observability',
+    icon: '📡',
     color: '#ff6584',
     skills: [
-      { name: 'Node.js', level: 88, icon: '🟩' },
-      { name: 'Python', level: 80, icon: '🐍' },
-      { name: 'PostgreSQL', level: 78, icon: '🐘' },
-      { name: 'MongoDB', level: 75, icon: '🍃' },
-      { name: 'REST APIs', level: 92, icon: '🔌' },
-      { name: 'GraphQL', level: 72, icon: '◈' },
+      { name: 'Prometheus / Grafana', level: 90, icon: '📊' },
+      { name: 'Helm', level: 88, icon: '⚓' },
+      { name: 'ArgoCD / Flux', level: 86, icon: '🚀' },
+      { name: 'Istio / Service Mesh', level: 80, icon: '🕸️' },
+      { name: 'Vault (HashiCorp)', level: 82, icon: '🔐' },
+      { name: 'GCP / Azure', level: 78, icon: '🌐' },
     ],
   },
   {
-    id: 'tools',
-    label: 'Tools & DevOps',
-    icon: '🛠️',
+    id: 'dev',
+    label: 'Backend & Frontend',
+    icon: '💻',
     color: '#43e8d8',
     skills: [
-      { name: 'Git / GitHub', level: 94, icon: '🐱' },
-      { name: 'Docker', level: 76, icon: '🐋' },
-      { name: 'AWS', level: 70, icon: '☁️' },
-      { name: 'Figma', level: 80, icon: '🖼️' },
-      { name: 'Jest / Testing', level: 82, icon: '🧪' },
-      { name: 'CI/CD', level: 74, icon: '🔄' },
+      { name: 'Python', level: 85, icon: '🐍' },
+      { name: 'Go', level: 76, icon: '🐹' },
+      { name: 'Node.js', level: 78, icon: '🟩' },
+      { name: 'React', level: 72, icon: '⚛️' },
+      { name: 'PostgreSQL', level: 80, icon: '🐘' },
+      { name: 'REST / gRPC APIs', level: 88, icon: '🔌' },
     ],
   },
 ]
@@ -105,7 +105,7 @@ export default function Skills() {
           <p className="section-label">My Skills</p>
           <h2 className="section-title">Technologies I Work With</h2>
           <p className="section-subtitle">
-            A curated set of tools and technologies I&apos;ve mastered over the years
+            Cloud-native infrastructure, DevOps tooling, and platform engineering — with backend & frontend as a plus
           </p>
         </div>
 
