@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import profile from '../../data/profile.js'
 import './About.css'
 
 const highlights = [
@@ -70,10 +71,7 @@ export default function About() {
               Building platforms that <span className="about__heading-accent">enable engineering teams to thrive</span>
             </h3>
             <p className="about__bio">
-              I&apos;m a Platform Engineer with 7+ years of experience designing and operating
-              cloud-native infrastructure on Azure. My core focus is Platform Engineering —
-              building the internal tooling, GitOps workflows, and Kubernetes-based platforms
-              that let product teams ship with confidence and without ops friction.
+              {profile.summary}
             </p>
             <p className="about__bio">
               I work daily with Kubernetes, Helm, Terraform, FluxCD, and Azure. I automate

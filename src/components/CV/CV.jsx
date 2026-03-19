@@ -1,0 +1,27 @@
+/** @import { Profile } from '../../types/profile.js' */
+import ProfileCard from '../ProfileCard/ProfileCard.jsx'
+import profile from '../../data/profile.js'
+import './CV.css'
+
+export default function CV() {
+  return (
+    <div className="cv">
+      <div className="cv__container">
+        <header className="cv__header">
+          <h1 className="cv__name">{profile.fullName}</h1>
+          {profile.summary && (
+            <p className="cv__summary">{profile.summary}</p>
+          )}
+        </header>
+
+        <div className="cv__body">
+          <aside className="cv__sidebar">
+            <ProfileCard profile={profile} />
+          </aside>
+
+          <main className="cv__main" />
+        </div>
+      </div>
+    </div>
+  )
+}
