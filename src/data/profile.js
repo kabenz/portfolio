@@ -11,6 +11,19 @@ const profile = {
     "Core focus is Platform Engineering — building the internal tooling, GitOps workflows, and Kubernetes-based platforms " +
     "that let product teams ship with confidence and without ops friction.",
   location: 'Portugal',
+  address: 'Lisbon, Portugal',
+  phone: '+351 900 000 000',
+
+  /**
+   * Per-field visibility rules.
+   * 'web'  → shown on /contact only
+   * 'cv'   → shown on /cv only
+   * 'both' → shown everywhere (default when omitted)
+   */
+  visibility: {
+    address: 'cv',
+    phone: 'cv',
+  },
 }
 
 export default profile

@@ -14,15 +14,31 @@ const LinkedInIcon = () => (
 )
 
 /**
+ * Returns true when a field should be rendered in the given context.
+ * A field with no visibility entry defaults to 'both' (always visible).
+ *
+ * @param {string} field - The field name to check
+ * @param {import('../../types/profile.js').ProfileVisibility | undefined} visibility
+ * @param {'web' | 'cv'} context
+ */
+function isVisible(field, visibility, context) {
+  const rule = visibility?.[field] ?? 'both'
+  return rule === 'both' || rule === context
+}
+
+/**
  * Reusable profile / contact information card.
  *
  * Required props  : profile.fullName, profile.email
  * Conditional props: profile.summary, profile.location, profile.phone,
- *                    profile.website, profile.linkedin, profile.github
+ *                    profile.address, profile.website, profile.linkedin,
+ *                    profile.github, profile.visibility
  *
- * @param {{ profile: Profile }} props
+ * @param {{ profile: Profile, context?: 'web' | 'cv' }} props
  */
-export default function ProfileCard({ profile }) {
+export default function ProfileCard({ profile, context = 'web' }) {
+  const { visibility } = profile
+
   return (
     <div className="profile-card">
       <div className="profile-card__header">
@@ -33,20 +49,22 @@ export default function ProfileCard({ profile }) {
       </div>
 
       <div className="profile-card__details">
-        <div className="profile-card__detail">
-          <div className="profile-card__detail-icon">📧</div>
-          <div>
-            <div className="profile-card__detail-label">Email</div>
-            <a
-              href={`mailto:${profile.email}`}
-              className="profile-card__detail-value profile-card__detail-value--link"
-            >
-              {profile.email}
-            </a>
+        {isVisible('email', visibility, context) && (
+          <div className="profile-card__detail">
+            <div className="profile-card__detail-icon">📧</div>
+            <div>
+              <div className="profile-card__detail-label">Email</div>
+              <a
+                href={`mailto:${profile.email}`}
+                className="profile-card__detail-value profile-card__detail-value--link"
+              >
+                {profile.email}
+              </a>
+            </div>
           </div>
-        </div>
+        )}
 
-        {profile.location && (
+        {profile.location && isVisible('location', visibility, context) && (
           <div className="profile-card__detail">
             <div className="profile-card__detail-icon">📍</div>
             <div>
@@ -56,7 +74,17 @@ export default function ProfileCard({ profile }) {
           </div>
         )}
 
-        {profile.phone && (
+        {profile.address && isVisible('address', visibility, context) && (
+          <div className="profile-card__detail">
+            <div className="profile-card__detail-icon">🏠</div>
+            <div>
+              <div className="profile-card__detail-label">Address</div>
+              <span className="profile-card__detail-value">{profile.address}</span>
+            </div>
+          </div>
+        )}
+
+        {profile.phone && isVisible('phone', visibility, context) && (
           <div className="profile-card__detail">
             <div className="profile-card__detail-icon">📞</div>
             <div>
@@ -71,7 +99,7 @@ export default function ProfileCard({ profile }) {
           </div>
         )}
 
-        {profile.website && (
+        {profile.website && isVisible('website', visibility, context) && (
           <div className="profile-card__detail">
             <div className="profile-card__detail-icon">🌐</div>
             <div>
@@ -91,7 +119,7 @@ export default function ProfileCard({ profile }) {
 
       {(profile.linkedin || profile.github) && (
         <div className="profile-card__social-links">
-          {profile.github && (
+          {profile.github && isVisible('github', visibility, context) && (
             <a
               href={profile.github}
               className="profile-card__social-btn"
@@ -103,7 +131,7 @@ export default function ProfileCard({ profile }) {
               <span>GitHub</span>
             </a>
           )}
-          {profile.linkedin && (
+          {profile.linkedin && isVisible('linkedin', visibility, context) && (
             <a
               href={profile.linkedin}
               className="profile-card__social-btn"

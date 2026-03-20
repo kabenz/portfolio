@@ -16,7 +16,7 @@ export default function CV() {
 
         <div className="cv__body">
           <aside className="cv__sidebar">
-            <ProfileCard profile={profile} />
+            <ProfileCard profile={profile} context="cv" />
           </aside>
 
           <main className="cv__main" />
