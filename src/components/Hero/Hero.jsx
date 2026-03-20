@@ -56,10 +56,9 @@ export default function Hero() {
           <span className="hero__cursor" />
         </h2>
 
-        <p className="hero__tagline fade-in visible">
-          I build the infrastructure that keeps software running at scale —
-          automating everything, breaking nothing.
-        </p>
+        {profile.summary && (
+          <p className="hero__tagline fade-in visible">{profile.summary}</p>
+        )}
 
         <div className="hero__cta fade-in visible">
           <button className="btn btn--primary" onClick={handleScrollToProjects}>
