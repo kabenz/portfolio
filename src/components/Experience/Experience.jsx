@@ -3,8 +3,11 @@ import experiences from '../../data/experience.js'
 import './Experience.css'
 
 function ExperienceCard({ exp, index }) {
+  const current = !exp.endDate
+  const period = `${exp.startDate} – ${exp.endDate ?? 'Present'}`
+
   return (
-    <div className={`exp-card fade-in ${exp.current ? 'exp-card--current' : ''}`} style={{ transitionDelay: `${index * 0.12}s` }}>
+    <div className={`exp-card fade-in ${current ? 'exp-card--current' : ''}`} style={{ transitionDelay: `${index * 0.12}s` }}>
       <div className="exp-card__marker">
         <div className="exp-card__dot" />
       </div>
@@ -16,13 +19,13 @@ function ExperienceCard({ exp, index }) {
             <p className="exp-card__company">{exp.company}</p>
           </div>
           <div className="exp-card__meta">
-            <span className="exp-card__period">{exp.period}</span>
+            <span className="exp-card__period">{period}</span>
             <span className="exp-card__location">📍 {exp.location}</span>
-            {exp.current && <span className="exp-card__badge">Current</span>}
+            {current && <span className="exp-card__badge">Current</span>}
           </div>
         </div>
 
-        <p className="exp-card__description">{exp.description}</p>
+        <p className="exp-card__description">{exp.summary}</p>
 
         <ul className="exp-card__achievements">
           {exp.achievements.map(a => (
@@ -34,8 +37,8 @@ function ExperienceCard({ exp, index }) {
         </ul>
 
         <div className="exp-card__tags">
-          {exp.tags.map(tag => (
-            <span key={tag} className="exp-card__tag">{tag}</span>
+          {exp.technologies.map(tech => (
+            <span key={tech} className="exp-card__tag">{tech}</span>
           ))}
         </div>
       </div>
