@@ -1,6 +1,7 @@
 /** @import { Profile } from '../../types/profile.js' */
 import ProfileCard from '../ProfileCard/ProfileCard.jsx'
 import profile from '../../data/profile.js'
+import experiences from '../../data/experience.js'
 import './CV.css'
 
 export default function CV() {
@@ -19,7 +20,40 @@ export default function CV() {
             <ProfileCard profile={profile} context="cv" />
           </aside>
 
-          <main className="cv__main" />
+          <main className="cv__main">
+            <section className="cv__experience">
+              <h2 className="cv__section-title">Professional Experience</h2>
+
+              {experiences.map(exp => (
+                <div key={exp.id} className="cv__exp-entry">
+                  <div className="cv__exp-header">
+                    <div className="cv__exp-title-group">
+                      <h3 className="cv__exp-role">{exp.role}</h3>
+                      <p className="cv__exp-company">{exp.company}</p>
+                    </div>
+                    <div className="cv__exp-meta">
+                      <span className="cv__exp-period">{exp.period}</span>
+                      <span className="cv__exp-location">{exp.location}</span>
+                    </div>
+                  </div>
+
+                  <p className="cv__exp-description">{exp.description}</p>
+
+                  <ul className="cv__exp-achievements">
+                    {exp.achievements.map(a => (
+                      <li key={a} className="cv__exp-achievement">{a}</li>
+                    ))}
+                  </ul>
+
+                  <div className="cv__exp-tags">
+                    {exp.tags.map(tag => (
+                      <span key={tag} className="cv__exp-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </section>
+          </main>
         </div>
       </div>
     </div>
