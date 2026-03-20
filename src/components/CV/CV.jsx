@@ -1,4 +1,5 @@
 /** @import { Profile } from '../../types/profile.js' */
+/** @import { ExperienceItem } from '../../types/experience.js' */
 import ProfileCard from '../ProfileCard/ProfileCard.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
@@ -32,12 +33,12 @@ export default function CV() {
                       <p className="cv__exp-company">{exp.company}</p>
                     </div>
                     <div className="cv__exp-meta">
-                      <span className="cv__exp-period">{exp.period}</span>
+                      <span className="cv__exp-period">{exp.startDate} – {exp.endDate ?? 'Present'}</span>
                       <span className="cv__exp-location">{exp.location}</span>
                     </div>
                   </div>
 
-                  <p className="cv__exp-description">{exp.description}</p>
+                  <p className="cv__exp-description">{exp.summary}</p>
 
                   <ul className="cv__exp-achievements">
                     {exp.achievements.map(a => (
@@ -46,8 +47,8 @@ export default function CV() {
                   </ul>
 
                   <div className="cv__exp-tags">
-                    {exp.tags.map(tag => (
-                      <span key={tag} className="cv__exp-tag">{tag}</span>
+                    {exp.technologies.map(tech => (
+                      <span key={tech} className="cv__exp-tag">{tech}</span>
                     ))}
                   </div>
                 </div>
