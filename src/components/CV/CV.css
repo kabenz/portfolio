@@ -44,20 +44,42 @@
 }
 
 @media print {
+  @page {
+    margin: 1.2cm 1.5cm;
+    size: A4;
+  }
+
   .cv {
     background: #fff;
     padding: 0;
+    min-height: unset;
   }
 
-  .cv__name {
-    color: #111;
-  }
-
-  .cv__summary {
-    color: #333;
+  .cv__container {
+    max-width: 100%;
   }
 
   .cv__header {
+    padding: 0 0 0.6rem;
+    margin-bottom: 0.8rem;
     border-bottom-color: #ccc;
+  }
+
+  .cv__name {
+    font-size: 1.6rem;
+    color: #111;
+    margin-bottom: 0.25rem;
+  }
+
+  .cv__summary {
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .cv__body {
+    grid-template-columns: 220px 1fr;
+    gap: 1.2rem;
   }
 }
