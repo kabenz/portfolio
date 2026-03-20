@@ -16,6 +16,18 @@ function App() {
     return <CV />
   }
 
+  if (path === '/experience') {
+    return (
+      <>
+        <Header />
+        <main>
+          <Experience />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
