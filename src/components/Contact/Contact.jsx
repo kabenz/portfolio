@@ -62,7 +62,7 @@ export default function Contact() {
 
         <div className="contact__grid">
           <div className="contact__info fade-in">
-            <ProfileCard profile={profile} />
+            <ProfileCard profile={profile} context="web" />
           </div>
 
           <div className="contact__form-wrapper fade-in">
