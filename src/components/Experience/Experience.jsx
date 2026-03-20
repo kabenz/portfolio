@@ -1,50 +1,7 @@
 import { useEffect, useRef } from 'react'
 import experiences from '../../data/experience.js'
+import ExperienceList from '../ExperienceList/ExperienceList.jsx'
 import './Experience.css'
-
-function ExperienceCard({ exp, index }) {
-  const current = !exp.endDate
-  const period = `${exp.startDate} – ${exp.endDate ?? 'Present'}`
-
-  return (
-    <div className={`exp-card fade-in ${current ? 'exp-card--current' : ''}`} style={{ transitionDelay: `${index * 0.12}s` }}>
-      <div className="exp-card__marker">
-        <div className="exp-card__dot" />
-      </div>
-
-      <div className="exp-card__content">
-        <div className="exp-card__header">
-          <div className="exp-card__title-group">
-            <h3 className="exp-card__role">{exp.role}</h3>
-            <p className="exp-card__company">{exp.company}</p>
-          </div>
-          <div className="exp-card__meta">
-            <span className="exp-card__period">{period}</span>
-            <span className="exp-card__location">📍 {exp.location}</span>
-            {current && <span className="exp-card__badge">Current</span>}
-          </div>
-        </div>
-
-        <p className="exp-card__description">{exp.summary}</p>
-
-        <ul className="exp-card__achievements">
-          {exp.achievements.map(a => (
-            <li key={a} className="exp-card__achievement">
-              <span className="exp-card__achievement-bullet" aria-hidden="true">▸</span>
-              {a}
-            </li>
-          ))}
-        </ul>
-
-        <div className="exp-card__tags">
-          {exp.technologies.map(tech => (
-            <span key={tech} className="exp-card__tag">{tech}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function Experience() {
   const sectionRef = useRef(null)
@@ -70,12 +27,7 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="experience__timeline">
-          <div className="experience__line" aria-hidden="true" />
-          {experiences.map((exp, index) => (
-            <ExperienceCard key={exp.id} exp={exp} index={index} />
-          ))}
-        </div>
+        <ExperienceList items={experiences} />
       </div>
     </section>
   )
