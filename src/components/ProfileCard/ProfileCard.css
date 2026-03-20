@@ -109,3 +109,91 @@
   background: rgba(108, 99, 255, 0.06);
   transform: translateY(-2px);
 }
+
+@media print {
+  .profile-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .profile-card::before {
+    display: none;
+  }
+
+  .profile-card__header {
+    margin-bottom: 0.6rem;
+  }
+
+  .profile-card__name {
+    font-size: 1rem;
+    color: #111;
+    margin-bottom: 0.15rem;
+  }
+
+  .profile-card__summary {
+    font-size: 0.78rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  .profile-card__details {
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .profile-card__detail {
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .profile-card__detail-icon {
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .profile-card__detail-label {
+    font-size: 0.65rem;
+    color: #666;
+    margin-bottom: 0;
+  }
+
+  .profile-card__detail-value {
+    font-size: 0.8rem;
+    color: #222;
+  }
+
+  .profile-card__detail-value--link {
+    color: #1a0dab;
+    text-decoration: underline;
+  }
+
+  .profile-card__social-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem;
+  }
+
+  .profile-card__social-btn {
+    padding: 0.25rem 0.4rem;
+    background: transparent;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #1a0dab;
+    text-decoration: none;
+    gap: 0.3rem;
+  }
+
+  .profile-card__social-btn:hover {
+    transform: none;
+  }
+}
