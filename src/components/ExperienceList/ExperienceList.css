@@ -25,9 +25,7 @@
 /* ── Individual card ── */
 .exp-card {
   position: relative;
-  display: grid;
-  grid-template-columns: 0 1fr;
-  gap: 0 var(--spacing-lg);
+  display: block;
 }
 
 .exp-card__marker {
@@ -148,6 +146,42 @@
   font-size: 0.93rem;
   line-height: 1.7;
   margin-bottom: var(--spacing-md);
+}
+
+/* ── Responsibilities ── */
+.exp-card__responsibilities {
+  margin-bottom: var(--spacing-md);
+}
+
+.exp-card__responsibilities-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.exp-card__responsibility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-card__responsibility {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.exp-card__responsibility-bullet {
+  color: var(--color-accent-secondary);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  font-size: 0.75rem;
 }
 
 /* ── Achievements ── */
@@ -294,6 +328,21 @@
     font-size: 0.82rem;
     color: #333;
     line-height: 1.5;
+  }
+
+  .exp-card__responsibilities-label {
+    font-size: 0.7rem;
+    color: #555;
+  }
+
+  .exp-card__responsibility {
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .exp-card__responsibility-bullet {
+    color: #6c63ff;
   }
 
   .exp-card__achievement {

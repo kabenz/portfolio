@@ -33,6 +33,20 @@ export default function ExperienceItem({ exp, index }) {
 
         <p className="exp-card__description">{exp.summary}</p>
 
+        {exp.responsibilities?.length > 0 && (
+          <div className="exp-card__responsibilities">
+            <p className="exp-card__responsibilities-label">Responsibilities</p>
+            <ul className="exp-card__responsibility-list">
+              {exp.responsibilities.map((r, i) => (
+                <li key={i} className="exp-card__responsibility">
+                  <span className="exp-card__responsibility-bullet" aria-hidden="true">▸</span>
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <ul className="exp-card__achievements">
           {exp.achievements.map(a => (
             <li key={a} className="exp-card__achievement">
