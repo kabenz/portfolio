@@ -29,7 +29,7 @@ const experiences = [
     id: 'bjss-platform-engineer',
     company: 'BJSS',
     role: 'Platform Engineer',
-    location: 'Lisbon, Portugal',
+    location: 'Lisbon, Portugal (Hybrid)',
     startDate: 'Mar 2023',
     endDate: 'Jul 2024',
     summary:
@@ -54,25 +54,42 @@ const experiences = [
     id: 'xgeeks-devops-sre-engineer',
     company: 'Xgeeks',
     role: 'DevOps/SRE Engineer',
-    location: 'Leiria, Portugal',
+    location: 'Leiria, Portugal (Hybrid)',
     startDate: 'Nov 2021',
     endDate: 'Mar 2023',
     summary:
-      'Managed on-premise and hybrid cloud infrastructure, supporting a data analytics platform processing millions of events daily.',
+      'Platform Engineer responsible for building and maintaining CI/CD pipelines, managing Cloud and On-prem infrastructure, supporting containerisation and on-prem kubernetes clusters and implementing security best practices for a large client in the automotive industry.',
     responsibilities: [
-      'Administer Linux-based on-premise servers and hybrid Azure environments',
-      'Support a high-throughput data analytics platform processing millions of events daily',
-      'Automate operational tasks and monitoring with Python and Bash scripting',
-      'Implement security hardening aligned with ISO 27001 across infrastructure and networking',
+      'CI/CD on GitHub Actions and Azure Pipelines',
+      'IaC Terraform',
+      'Manage ELK Stack, Grafana and Prometheus for monitoring and logging',
+      'GitOps with FluxCD',
+      'Containerisation with Docker and Kubernetes',
+      'Setup of Serverless and Function as a Service approach for a PoC to a big client with Knative and Openfaas respectively'
+    ],
+    technologies: ['Azure', 'Linux', 'Python', 'Bash', 'ELK Stack', 'Grafana', 'Prometheus', 'GitHub Actions', 'Azure Pipelines', 'Terraform', 'Docker', 'Kubernetes', 'FluxCD', 'Knative', 'Openfaas'],
+    sortOrder: 3,
+  },
+  {
+    id: 'alter-solutions-release-engineer',
+    company: 'Alter Solutions Portugal',
+    role: 'Release Engineer',
+    location: 'Lisbon, Portugal (Hybrid)',
+    startDate: 'Mar 2021',
+    endDate: 'Nov 2021',
+    summary:
+      'Release Manager supporting an Azure Infrastructure (IaaS) with AKS for 30+ microservices',
+    responsibilities: [
+      'Manage CI/CD on Azure Pipelines',
+      'IaC with Terraform',
+      'Process Automation with Python and Bash',
+      'Support to Jenkins builds and deploys'
     ],
     achievements: [
-      'Led lift-and-shift migration of 30 on-prem workloads to Azure, reducing hardware costs by €200k/year',
-      'Automated routine ops tasks with Python and Bash scripts, saving the team ~15 hours/week',
-      'Deployed an ELK stack for centralised logging, improving incident MTTR by 40%',
-      'Hardened Linux environments and implemented network segmentation aligned with ISO 27001',
+      'Automated routine ops tasks with Python to deploy microservices to AKS, saving the team 1h/week',
     ],
-    technologies: ['Azure', 'Linux', 'Python', 'Bash', 'ELK Stack', 'Networking'],
-    sortOrder: 3,
+    technologies: ['Azure', 'AKS', 'Azure Pipelines', 'Terraform', 'Python', 'Bash', 'Jenkins'],
+    sortOrder: 4,
   },
 ]
 

@@ -48,7 +48,7 @@ export default function ExperienceItem({ exp, index }) {
         )}
 
         <ul className="exp-card__achievements">
-          {exp.achievements.map(a => (
+          {(exp.achievements ?? []).map(a => (
             <li key={a} className="exp-card__achievement">
               <span className="exp-card__achievement-bullet" aria-hidden="true">▸</span>
               {a}

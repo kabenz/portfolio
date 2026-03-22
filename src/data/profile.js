@@ -3,8 +3,8 @@
 /** @type {Profile} */
 const profile = {
   fullName: 'José Perdigão',
-  email: 'jose@perdigao.dev',
-  linkedin: 'https://linkedin.com/in/kabenz',
+  email: 'zeperdigao.95@gmail.com',
+  linkedin: 'https://linkedin.com/in/jose-perdigao/',
   github: 'https://github.com/kabenz',
   summary:
     "Platform Engineer with 7+ years of experience designing and operating cloud-native infrastructure on Azure. " +
