@@ -22,8 +22,8 @@ const skills = [
   { name: 'Python',      category: 'languages', level: 'advanced', featured: true,  icon: '🐍' },
   { name: 'Bash',        category: 'languages', level: 'expert',   featured: true,  icon: '🖥️' },
   { name: 'PowerShell',  category: 'languages', level: 'advanced', featured: false, icon: '💠' },
-  { name: 'Go',          category: 'languages', level: 'intermediate', featured: false, icon: '🐹' },
-  { name: 'JavaScript',  category: 'languages', level: 'intermediate', featured: false, icon: '🟨' },
+  { name: 'Go',          category: 'languages', level: 'intermediate', featured: false, enthusiast: true, icon: '🐹' },
+  { name: 'JavaScript',  category: 'languages', level: 'intermediate', featured: false, enthusiast: true, icon: '🟨' },
 ]
 
 export default skills
