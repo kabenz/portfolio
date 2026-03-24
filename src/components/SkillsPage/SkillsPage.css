@@ -1,0 +1,9 @@
+.skills-page {
+  background: var(--color-bg-primary);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.skills-page__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
