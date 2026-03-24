@@ -7,13 +7,28 @@ import Projects from './components/Projects/Projects'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import CV from './components/CV/CV'
+import SkillsPage from './components/SkillsPage/SkillsPage'
 import './App.css'
 
 function App() {
-  const path = window.location.pathname
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '') // e.g. '/portfolio'
+  const raw = window.location.pathname
+  const path = raw.startsWith(base) ? raw.slice(base.length) || '/' : raw
 
   if (path === '/cv') {
     return <CV />
+  }
+
+  if (path === '/skills') {
+    return (
+      <>
+        <Header />
+        <main>
+          <SkillsPage />
+        </main>
+        <Footer />
+      </>
+    )
   }
 
   if (path === '/experience') {
