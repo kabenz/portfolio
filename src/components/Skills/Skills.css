@@ -1,18 +1,15 @@
 .skills {
-  background: var(--color-bg-primary);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
+.skills::before {
+  display: none;
+}
+
 .skills::after {
-  content: '';
-  position: absolute;
-  bottom: -200px;
-  right: -200px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 101, 132, 0.05) 0%, transparent 70%);
-  pointer-events: none;
+  display: none;
 }
 
 .skills__content {
@@ -23,11 +20,42 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-accent-primary) 8%, transparent) 0%, transparent 55%),
-    radial-gradient(circle at 95% 100%, color-mix(in srgb, var(--color-accent-secondary) 8%, transparent) 0%, transparent 60%),
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-accent-primary) 12%, transparent) 0%, transparent 55%),
+    radial-gradient(circle at 95% 100%, color-mix(in srgb, var(--color-accent-secondary) 12%, transparent) 0%, transparent 60%),
     color-mix(in srgb, white 72%, var(--color-card-bg));
-  border: 1px solid var(--color-card-border);
-  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.06);
+  border: 1px solid color-mix(in srgb, var(--color-card-border) 70%, var(--color-accent-primary));
+  box-shadow:
+    0 20px 44px rgba(17, 24, 39, 0.08),
+    0 0 0 1px color-mix(in srgb, var(--color-accent-primary) 18%, transparent) inset;
+  backdrop-filter: blur(14px);
+  animation: skills-glow 9s ease-in-out infinite;
+}
+
+.skills__content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(108, 99, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 99, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at 50% 45%, black 35%, transparent 100%);
+}
+
+@keyframes skills-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 20px 44px rgba(17, 24, 39, 0.08),
+      0 0 0 1px color-mix(in srgb, var(--color-accent-primary) 18%, transparent) inset;
+  }
+  50% {
+    box-shadow:
+      0 24px 52px rgba(17, 24, 39, 0.1),
+      0 0 0 1px color-mix(in srgb, var(--color-accent-secondary) 26%, transparent) inset;
+  }
 }
 
 .skills__grid {
@@ -152,9 +180,16 @@
   .skills__content {
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
+    animation: none;
   }
 
   .skills__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__content {
+    animation: none;
   }
 }

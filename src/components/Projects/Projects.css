@@ -1,19 +1,11 @@
 .projects {
-  background: var(--color-bg-secondary);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
 .projects::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.04) 0%, transparent 70%);
-  pointer-events: none;
+  display: none;
 }
 
 .projects__grid {

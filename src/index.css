@@ -86,7 +86,16 @@ ul, ol {
 }
 
 .section {
+  position: relative;
   padding: var(--spacing-2xl) 0;
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-accent-primary) 5%, transparent) 0%, transparent 36%),
+    radial-gradient(circle at 90% 100%, color-mix(in srgb, var(--color-accent-secondary) 5%, transparent) 0%, transparent 38%),
+    var(--color-bg-primary);
+}
+
+.section + .section {
+  border-top: 1px solid color-mix(in srgb, var(--color-card-border) 75%, transparent);
 }
 
 .section-header {

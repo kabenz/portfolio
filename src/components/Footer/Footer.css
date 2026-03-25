@@ -1,6 +1,9 @@
 .footer {
-  background: var(--color-bg-secondary);
-  border-top: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-accent-primary) 5%, transparent) 0%, transparent 36%),
+    radial-gradient(circle at 90% 100%, color-mix(in srgb, var(--color-accent-secondary) 5%, transparent) 0%, transparent 38%),
+    var(--color-bg-primary);
+  border-top: 1px solid color-mix(in srgb, var(--color-card-border) 75%, transparent);
 }
 
 .footer__top {
