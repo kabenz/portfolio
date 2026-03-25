@@ -1,7 +1,7 @@
-/** @import { EducationItem } from '../types/education.js' */
+/** @import { CertificationItem, EducationItem } from '../types/education.js' */
 
 /** @type {EducationItem[]} */
-const educationItems = [
+export const educationItems = [
   {
     id: 'iscte-computer-science',
     institution: 'ISCTE – Instituto Universitário de Lisboa',
@@ -17,24 +17,22 @@ const educationItems = [
       'Web Development',
     ],
   },
+]
+
+/** @type {CertificationItem[]} */
+export const certifications = [
   {
     id: 'microsoft-az900',
-    institution: 'Microsoft',
-    degree: 'Certification',
+    name: 'AZ-900: Microsoft Azure Fundamentals',
+    issuer: 'Microsoft',
     field: 'Cloud Computing',
-    startDate: 'Jan 2021',
-    endDate: 'Jan 2021',
-    certifications: ['AZ-900: Microsoft Azure Fundamentals'],
+    date: 'Jan 2021',
   },
   {
     id: 'microsoft-az104',
-    institution: 'Microsoft',
-    degree: 'Certification',
+    name: 'AZ-104: Microsoft Azure Administrator',
+    issuer: 'Microsoft',
     field: 'Cloud Administration',
-    startDate: 'Jun 2021',
-    endDate: 'Jun 2021',
-    certifications: ['AZ-104: Microsoft Azure Administrator'],
+    date: 'Jun 2021',
   },
 ]
-
-export default educationItems
