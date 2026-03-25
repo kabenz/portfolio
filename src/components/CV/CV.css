@@ -223,6 +223,7 @@
     padding-bottom: 0.6rem;
     border-bottom-color: #eee;
     break-inside: avoid;
+    page-break-inside: avoid;
     gap: 0.3rem;
   }
 

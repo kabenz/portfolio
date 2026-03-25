@@ -312,8 +312,14 @@
     background: #fff;
   }
 
+  .experience__year-marker {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
   .exp-card {
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .exp-card__marker {
