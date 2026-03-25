@@ -39,6 +39,27 @@
     color-mix(in srgb, var(--color-bg-secondary) 55%, transparent);
 }
 
+/* ── Featured / Key Expertise spotlight ── */
+.tech-list__section--featured {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 1px solid color-mix(in srgb, var(--color-accent-primary) 38%, var(--color-card-border));
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(ellipse at 0% 50%, color-mix(in srgb, var(--color-accent-primary) 10%, transparent) 0%, transparent 65%),
+    radial-gradient(ellipse at 100% 50%, color-mix(in srgb, var(--color-accent-secondary) 8%, transparent) 0%, transparent 65%),
+    var(--color-card-bg);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent-primary) 10%, transparent),
+              0 8px 24px color-mix(in srgb, var(--color-accent-primary) 8%, transparent);
+}
+
+.tech-list__section--featured .tech-list__section-icon {
+  font-size: 1rem;
+}
+
+.tech-list__section--featured .tech-list__section-title {
+  color: var(--color-accent-primary);
+}
+
 .tech-list__section-desc {
   font-size: 0.92rem;
   color: var(--color-text-muted);
@@ -160,6 +181,10 @@
   padding: 0.8rem var(--spacing-md);
 }
 
+.tech-list--compact .tech-list__section--featured {
+  padding: 0.8rem var(--spacing-md);
+}
+
 .tech-list--compact .tech-list__section-title {
   font-size: 0.88rem;
 }
@@ -248,6 +273,13 @@
     border-color: #ccc;
     background: #fafafa;
     padding: 0.4rem 0.5rem;
+  }
+
+  .tech-list__section--featured {
+    border-color: var(--color-accent-primary, #6c63ff);
+    background: #f0eeff;
+    padding: 0.4rem 0.5rem;
+    box-shadow: none;
   }
 
   .tech-list__section-title {
