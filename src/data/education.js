@@ -9,6 +9,8 @@ export const educationItems = [
     field: 'Computer Science and Management',
     startDate: 'Sep 2015',
     endDate: 'Jul 2018',
+    concentration: 'Software Engineering',
+    specialization: 'Information Systems',
     courses: [
       'Algorithms and Data Structures',
       'Software Engineering',

@@ -65,6 +65,23 @@ export default function EducationItem({ edu, index }) {
           </div>
         </div>
 
+        {(edu.concentration || edu.specialization) && (
+          <div className="edu-card__details">
+            {edu.concentration && (
+              <span className="edu-card__detail-tag">
+                <span className="edu-card__detail-label">Concentration</span>
+                {edu.concentration}
+              </span>
+            )}
+            {edu.specialization && (
+              <span className="edu-card__detail-tag">
+                <span className="edu-card__detail-label">Specialization</span>
+                {edu.specialization}
+              </span>
+            )}
+          </div>
+        )}
+
         {edu.courses?.length > 0 && (
           <div className="edu-card__courses">
             <p className="edu-card__courses-label">Notable Courses</p>

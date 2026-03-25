@@ -149,6 +149,35 @@
   box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
 }
 
+/* ── Academic details (concentration / specialization) ── */
+.edu-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: var(--spacing-sm);
+}
+
+.edu-card__detail-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-full);
+  padding: 0.18rem 0.65rem;
+  line-height: 1.5;
+}
+
+.edu-card__detail-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
 /* ── Notable courses ── */
 .edu-card__courses {
   margin-top: var(--spacing-md);
@@ -411,6 +440,22 @@
     border-color: #9992e0;
     color: #6c63ff;
     padding: 0.1rem 0.4rem;
+  }
+
+  .edu-card__details {
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .edu-card__detail-tag {
+    font-size: 0.72rem;
+    border-color: #ddd;
+    padding: 0.1rem 0.45rem;
+  }
+
+  .edu-card__detail-label {
+    font-size: 0.62rem;
+    color: #888;
   }
 
   .edu-card__courses-label {
