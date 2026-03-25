@@ -485,6 +485,8 @@
     border-bottom-color: #ccc;
     padding-bottom: 0.25rem;
     margin-bottom: 0.4rem;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .education__cert-grid {
