@@ -1,0 +1,22 @@
+.education {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.education::before {
+  display: none;
+}
+
+/* ── Print / PDF export ── */
+@media print {
+  .education {
+    background: #fff;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .education::before {
+    display: none;
+  }
+}

@@ -1,0 +1,437 @@
+/* ── Timeline container ── */
+.education__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.education__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-left: 2.5rem;
+}
+
+.education__line {
+  position: absolute;
+  left: 0.65rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent-primary),
+    var(--color-accent-secondary),
+    transparent
+  );
+  border-radius: var(--radius-full);
+}
+
+/* ── Individual education card ── */
+.edu-card {
+  position: relative;
+  display: block;
+}
+
+.edu-card__marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.edu-card__dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-accent-primary);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.edu-card:hover .edu-card__dot {
+  transform: scale(1.2);
+}
+
+.edu-card__content {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.edu-card:hover .edu-card__content {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+/* ── Card header ── */
+.edu-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.edu-card__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.edu-card__degree {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.edu-card__institution {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-accent-primary);
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.edu-card__field {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+
+.edu-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.edu-card__period {
+  font-size: 0.82rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── Notable courses ── */
+.edu-card__courses {
+  margin-top: var(--spacing-md);
+}
+
+.edu-card__courses-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.edu-card__course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.edu-card__course {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.edu-card__course-bullet {
+  color: var(--color-accent-secondary);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  font-size: 0.75rem;
+}
+
+/* ── Certifications group ── */
+.education__certifications {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.education__group-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.education__cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* ── Certification card ── */
+.cert-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cert-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.cert-card__link:hover .cert-card,
+.cert-card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.cert-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.cert-card__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cert-card__name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.cert-card__issuer {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-accent-primary);
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cert-card__field {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+
+.cert-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.cert-card__date {
+  font-size: 0.82rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.cert-card__expiry {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .education__timeline {
+    padding-left: 1.8rem;
+  }
+
+  .education__line {
+    left: 0.4rem;
+  }
+
+  .edu-card__marker {
+    left: -1.8rem;
+  }
+
+  .edu-card__header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .edu-card__meta {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .edu-card__content {
+    padding: var(--spacing-md);
+  }
+
+  .education__cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Print / PDF export ── */
+@media print {
+  .education__list {
+    gap: 0.8rem;
+  }
+
+  .education__timeline {
+    gap: 0.8rem;
+    padding-left: 1.5rem;
+  }
+
+  .education__line {
+    left: 0.4rem;
+    background: #ccc;
+  }
+
+  .edu-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .edu-card__marker {
+    left: -1.5rem;
+  }
+
+  .edu-card__dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-color: #6c63ff;
+    background: #6c63ff;
+    box-shadow: none;
+  }
+
+  .edu-card__content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.8rem;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .edu-card__degree {
+    font-size: 0.9rem;
+    color: #111;
+  }
+
+  .edu-card__institution {
+    font-size: 0.82rem;
+    background: none;
+    -webkit-text-fill-color: #6c63ff;
+    color: #6c63ff;
+  }
+
+  .edu-card__field {
+    font-size: 0.78rem;
+    color: #555;
+  }
+
+  .edu-card__period {
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  .edu-card__courses-label {
+    font-size: 0.7rem;
+    color: #555;
+  }
+
+  .edu-card__course {
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .edu-card__course-bullet {
+    color: #6c63ff;
+  }
+
+  .education__certifications {
+    gap: 0.6rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .education__group-title {
+    font-size: 0.9rem;
+    color: #111;
+    border-bottom-color: #ccc;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .education__cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .cert-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    box-shadow: none;
+    transform: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cert-card__name {
+    font-size: 0.82rem;
+    color: #111;
+  }
+
+  .cert-card__issuer {
+    font-size: 0.75rem;
+    background: none;
+    -webkit-text-fill-color: #6c63ff;
+    color: #6c63ff;
+  }
+
+  .cert-card__field {
+    font-size: 0.72rem;
+    color: #555;
+  }
+
+  .cert-card__date {
+    font-size: 0.72rem;
+    color: #555;
+  }
+
+  .cert-card__expiry {
+    font-size: 0.68rem;
+    color: #888;
+  }
+}
