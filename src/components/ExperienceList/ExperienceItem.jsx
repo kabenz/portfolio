@@ -1,18 +1,40 @@
 /** @import { ExperienceItem as ExperienceItemType } from '../../types/experience.js' */
 
 /**
+ * Calculates a human-readable duration string between two dates.
+ *
+ * @param {string} startDate
+ * @param {string | undefined} endDate
+ * @returns {string}
+ */
+function getDuration(startDate, endDate) {
+  const start = new Date(startDate)
+  const end = endDate ? new Date(endDate) : new Date()
+  const totalMonths =
+    (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth())
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+
+  if (years === 0) return `${months} mo${months !== 1 ? 's' : ''}`
+  if (months === 0) return `${years} yr${years !== 1 ? 's' : ''}`
+  return `${years} yr${years !== 1 ? 's' : ''} ${months} mo${months !== 1 ? 's' : ''}`
+}
+
+/**
  * @param {{ exp: ExperienceItemType, index: number }} props
  */
 export default function ExperienceItem({ exp, index }) {
   const current = !exp.endDate
   const period = `${exp.startDate} – ${exp.endDate ?? 'Present'}`
+  const duration = getDuration(exp.startDate, exp.endDate)
 
   return (
     <article
       className={`exp-card fade-in ${current ? 'exp-card--current' : ''}`}
       style={{ transitionDelay: `${index * 0.12}s` }}
+      aria-label={`${exp.role} at ${exp.company}${current ? ', current role' : ''}`}
     >
-      <div className="exp-card__marker">
+      <div className="exp-card__marker" aria-hidden="true">
         <div className="exp-card__dot" />
       </div>
 
@@ -23,11 +45,21 @@ export default function ExperienceItem({ exp, index }) {
             <p className="exp-card__company">{exp.company}</p>
           </div>
           <div className="exp-card__meta">
-            <span className="exp-card__period">{period}</span>
+            <span className="exp-card__period">
+              {period}
+              <span className="exp-card__duration">
+                {' '}· {duration}
+              </span>
+            </span>
             {exp.location && (
-              <span className="exp-card__location">📍 {exp.location}</span>
+              <span className="exp-card__location">
+                <span aria-hidden="true">📍 </span>
+                {exp.location}
+              </span>
             )}
-            {current && <span className="exp-card__badge">Current</span>}
+            {current && (
+              <span className="exp-card__badge">Current</span>
+            )}
           </div>
         </div>
 
