@@ -12,6 +12,7 @@ export default function CertificationItem({ cert, index }) {
     >
       <div className="cert-card__header">
         <div className="cert-card__title-group">
+          <span className="cert-card__badge">Certification</span>
           <h3 className="cert-card__name">{cert.name}</h3>
           <p className="cert-card__issuer">{cert.issuer}</p>
           {cert.field && <p className="cert-card__field">{cert.field}</p>}
