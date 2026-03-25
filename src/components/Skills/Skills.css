@@ -15,6 +15,21 @@
   pointer-events: none;
 }
 
+.skills__content {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-accent-primary) 8%, transparent) 0%, transparent 55%),
+    radial-gradient(circle at 95% 100%, color-mix(in srgb, var(--color-accent-secondary) 8%, transparent) 0%, transparent 60%),
+    color-mix(in srgb, white 72%, var(--color-card-bg));
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.06);
+}
+
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -134,6 +149,11 @@
 }
 
 @media (max-width: 640px) {
+  .skills__content {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+
   .skills__grid {
     grid-template-columns: 1fr;
   }
