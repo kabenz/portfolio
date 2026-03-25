@@ -53,12 +53,12 @@ export default function About() {
             <div className="about__quick-facts">
               <div className="about__fact">
                 <span className="about__fact-icon">📍</span>
-                <span>Portugal</span>
+                <span>Leiria, Portugal</span>
               </div>
-              <div className="about__fact">
+              {/* <div className="about__fact">
                 <span className="about__fact-icon">💼</span>
                 <span>Open to Opportunities</span>
-              </div>
+              </div> */}
               <div className="about__fact">
                 <span className="about__fact-icon">🎓</span>
                 <span>Computer Engineering</span>

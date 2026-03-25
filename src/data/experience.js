@@ -18,11 +18,8 @@ const experiences = [
       'Bash/Python/Typescript scripting to automate operational tasks and support product teams with CI/CD related processes',
       'Support to AKS clusters',
     ],
-    achievements: [
-      'Implemented Enterprise wide CI/CD reusable workflows to be used across 30+ product teams, reducing pipeline development time by 50%',
-      'Migration of product teams to Enterprise wide CI/CD reusable workflows, improving consistency and maintainability of pipelines across the organisation',
-    ],
-    technologies: ['AKS', 'Kubernetes', 'GitHub Actions', 'Terraform', 'Helm', 'Bash', 'Python', 'Typescript', 'YAML'],
+    achievements: [],
+    technologies: ['Azure','AKS', 'Kubernetes', 'GitHub Actions', 'Terraform', 'Helm', 'Bash', 'Python', 'Typescript', 'YAML', 'CI/CD'],
     sortOrder: 1,
   },
   {
@@ -42,12 +39,8 @@ const experiences = [
       'Powershell and Bash scripting to automate operational tasks and support product teams with CI/CD related processes',
       'Lead PoC to migration from App Services to AKS, including containerisation of legacy workloads with Docker and orchestration of migration with zero downtime',
     ],
-    achievements: [
-      'Designed and implemented CI/CD pipelines with Azure Pipelines, reducing effort for product teams to set up and maintain pipelines by 30%',
-      'AKS PoC success, leading to a roadmap for migration of 50+ workloads to AKS, improving scalability and maintainability of applications',
-      'Containerised legacy workloads with Docker and orchestrated migration to AKS with zero downtime',
-    ],
-    technologies: ['Azure Pipelines', 'Terraform', 'Docker', 'AKS', 'Helm', 'Cloudflare', 'Powershell', 'Bash', 'YAML'],
+    achievements: [],
+    technologies: ['Azure', 'Azure Pipelines', 'Terraform', 'Docker', 'AKS', 'Helm', 'Cloudflare', 'Powershell', 'Bash', 'YAML', 'CI/CD'],
     sortOrder: 2,
   },
   {
@@ -67,7 +60,8 @@ const experiences = [
       'Containerisation with Docker and Kubernetes',
       'Setup of Serverless and Function as a Service approach for a PoC to a big client with Knative and Openfaas respectively'
     ],
-    technologies: ['Azure', 'Linux', 'Python', 'Bash', 'ELK Stack', 'Grafana', 'Prometheus', 'GitHub Actions', 'Azure Pipelines', 'Terraform', 'Docker', 'Kubernetes', 'FluxCD', 'Knative', 'Openfaas'],
+    achievements: [],
+    technologies: ['Azure', 'Linux', 'Python', 'Bash', 'ELK Stack', 'Grafana', 'Prometheus', 'GitHub Actions', 'Azure Pipelines', 'Terraform', 'Docker', 'Kubernetes', 'FluxCD', 'Knative', 'Openfaas', 'GitOps', 'CI/CD'],
     sortOrder: 3,
   },
   {
@@ -85,11 +79,29 @@ const experiences = [
       'Process Automation with Python and Bash',
       'Support to Jenkins builds and deploys'
     ],
-    achievements: [
-      'Automated routine ops tasks with Python to deploy microservices to AKS, saving the team 1h/week',
-    ],
-    technologies: ['Azure', 'AKS', 'Azure Pipelines', 'Terraform', 'Python', 'Bash', 'Jenkins'],
+    achievements: [],
+    technologies: ['Azure', 'AKS', 'Azure Pipelines', 'Terraform', 'Python', 'Bash', 'Jenkins', 'Kubernetes', 'CI/CD'],
     sortOrder: 4,
+  },
+  {
+    id: 'deloitte-software-engineer',
+    company: 'Deloitte Portugal',
+    role: 'Software Engineer',
+    location: 'Lisbon, Portugal',
+    startDate: 'Aug 2018',
+    endDate: 'Mar 2021',
+    summary:
+      'Starting point of my Software Engineering career, where I had the opportunity to work on a wide range of projects for different clients, with a focus on DevOps and Cloud technologies',
+    responsibilities: [
+      'Manage CI/CD on Azure Pipelines (Monolithic application)',
+      'Development of .Net Core applications',
+      'IaC with Terraform and ARM Templates',
+      'Ficancial core business transformation process using Essence framework containerized with Docker',
+      'Full stack development using Java and JavaScript',
+    ],
+    achievements: [],
+    technologies: ['Azure', 'Azure Pipelines', 'Terraform', 'ARM Templates', 'Java', 'JavaScript', '.Net Core', 'Docker', 'CI/CD', 'Essence Framework'],
+    sortOrder: 5,
   },
 ]
 
