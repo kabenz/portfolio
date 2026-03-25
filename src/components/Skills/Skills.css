@@ -185,6 +185,15 @@
 
   .skills__grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .skills__card {
+    padding: var(--spacing-md);
+  }
+
+  .skills__card-title {
+    font-size: 1rem;
   }
 }
 

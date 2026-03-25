@@ -4,6 +4,22 @@
 }
 
 .skills-page__content {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .skills-page__content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-page .section-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .skills-page .section-subtitle {
+    font-size: 0.95rem;
+  }
 }
