@@ -122,25 +122,6 @@
   line-height: 1;
 }
 
-/* ── Proficiency level badge ── */
-.tech-chip__level {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--cat-color, var(--color-accent-primary));
-  opacity: 0.8;
-  padding-left: 0.3rem;
-  border-left: 1px solid var(--color-card-border);
-  line-height: 1;
-}
-
-/* Proficiency-based dim for lower levels */
-.tech-chip--intermediate,
-.tech-chip--beginner {
-  opacity: 0.75;
-}
-
 /* ── Compact variant (CV) ── */
 .tech-list--compact .tech-list__section {
   gap: var(--spacing-sm);
@@ -266,11 +247,5 @@
 
   .tech-chip__icon {
     font-size: 0.75rem;
-  }
-
-  .tech-chip__level {
-    font-size: 0.6rem;
-    color: #555;
-    border-left-color: #ccc;
   }
 }

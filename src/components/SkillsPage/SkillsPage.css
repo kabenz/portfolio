@@ -3,53 +3,6 @@
   min-height: calc(100vh - var(--header-height));
 }
 
-/* ── Proficiency legend ── */
-.skills-page__legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm) var(--spacing-lg);
-  justify-content: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-.skills-page__legend-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.skills-page__legend-dot {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-top: 0.3rem;
-  background: var(--color-accent-primary);
-}
-
-.skills-page__legend-item--expert        .skills-page__legend-dot { background: #6c63ff; }
-.skills-page__legend-item--advanced      .skills-page__legend-dot { background: #43e8d8; }
-.skills-page__legend-item--intermediate  .skills-page__legend-dot { background: #ff6584; }
-.skills-page__legend-item--beginner      .skills-page__legend-dot { background: var(--color-text-muted); }
-
-.skills-page__legend-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.skills-page__legend-label {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-}
-
-.skills-page__legend-desc {
-  font-size: 0.76rem;
-  color: var(--color-text-muted);
-  line-height: 1.35;
-}
-
 .skills-page__content {
   max-width: 800px;
   margin: 0 auto;

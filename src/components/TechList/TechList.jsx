@@ -8,14 +8,6 @@ const categoryMeta = [
   { id: 'languages', label: 'Languages & Scripting',  icon: '💻',  color: '#43e8d8' },
 ]
 
-/** @type {Record<string, string>} */
-const levelLabel = {
-  expert:       'Expert',
-  advanced:     'Advanced',
-  intermediate: 'Intermediate',
-  beginner:     'Beginner',
-}
-
 // Core expertise categories (exclude enthusiast-flagged skills)
 const expertiseCategories = categoryMeta
   .map(cat => ({ ...cat, skills: skills.filter(s => s.category === cat.id && !s.enthusiast) }))
@@ -26,20 +18,16 @@ const enthusiastSkills = skills.filter(s => s.enthusiast)
 
 /**
  * Renders a single skill chip.
- * @param {{ skill: import('../../types/skill.js').SkillItem, compact: boolean, catColor?: string }} props
+ * @param {{ skill: import('../../types/skill.js').SkillItem, catColor?: string }} props
  */
-function SkillChip({ skill, compact, catColor }) {
+function SkillChip({ skill, catColor }) {
   return (
     <span
-      className={`tech-chip${skill.featured ? ' tech-chip--featured' : ''}${skill.level ? ` tech-chip--${skill.level}` : ''}`}
+      className={`tech-chip${skill.featured ? ' tech-chip--featured' : ''}`}
       style={catColor ? { '--cat-color': catColor } : undefined}
-      title={skill.level ? levelLabel[skill.level] : undefined}
     >
       {skill.icon && <span className="tech-chip__icon">{skill.icon}</span>}
       <span className="tech-chip__name">{skill.name}</span>
-      {!compact && skill.level && (
-        <span className="tech-chip__level">{levelLabel[skill.level]}</span>
-      )}
     </span>
   )
 }
@@ -72,7 +60,7 @@ export default function TechList({ compact = false }) {
             </div>
             <div className="tech-list__chips">
               {cat.skills.map(skill => (
-                <SkillChip key={skill.name} skill={skill} compact={compact} />
+                <SkillChip key={skill.name} skill={skill} />
               ))}
             </div>
           </div>
@@ -94,7 +82,7 @@ export default function TechList({ compact = false }) {
           <div className="tech-list__chips">
             {enthusiastSkills.map(skill => {
               const catColor = categoryMeta.find(c => c.id === skill.category)?.color
-              return <SkillChip key={skill.name} skill={skill} compact={compact} catColor={catColor} />
+              return <SkillChip key={skill.name} skill={skill} catColor={catColor} />
             })}
           </div>
         </div>
