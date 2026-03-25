@@ -42,27 +42,6 @@ export default function TechList({ compact = false }) {
   return (
     <div className={`tech-list${compact ? ' tech-list--compact' : ''}`}>
 
-      {/* ── Featured spotlight ── */}
-      {featuredSkills.length > 0 && (
-        <div className="tech-list__section tech-list__section--featured">
-          <div className="tech-list__section-header">
-            <span className="tech-list__section-icon">⭐</span>
-            <h3 className="tech-list__section-title">Key Expertise</h3>
-          </div>
-          {!compact && (
-            <p className="tech-list__section-desc">
-              Technologies I use most — the foundations of my daily work.
-            </p>
-          )}
-          <div className="tech-list__chips">
-            {featuredSkills.map(skill => {
-              const catColor = categoryMeta.find(c => c.id === skill.category)?.color
-              return <SkillChip key={skill.name} skill={skill} catColor={catColor} />
-            })}
-          </div>
-        </div>
-      )}
-
       {/* ── Core expertise ── */}
       <div className="tech-list__section">
         {!compact && (
