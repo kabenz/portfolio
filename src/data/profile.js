@@ -24,6 +24,7 @@ const profile = {
     address: 'cv',
     phone: 'cv',
   },
+  status: 'Open to interesting opportunities',
 }
 
 export default profile

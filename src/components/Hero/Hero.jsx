@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="hero__content container">
         <div className="hero__badge fade-in visible">
           <span className="hero__badge-dot" />
-          Available for opportunities
+          {profile.status ?? 'Available for opportunities'}
         </div>
 
         <h1 className="hero__name fade-in visible">

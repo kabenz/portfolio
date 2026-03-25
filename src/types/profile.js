@@ -32,6 +32,7 @@
  * @property {string} [github]   - GitHub profile URL
  * @property {string} [website]  - Personal website URL
  * @property {string} [summary]  - Short professional summary
+ * @property {string} [status]   - Availability/status text shown in hero badge
  * @property {string} [location] - City / country
  *
  * Visibility control
