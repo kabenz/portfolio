@@ -359,21 +359,24 @@
   }
 
   .tech-list__section--enthusiast {
-    border-color: #ccc;
+    border: 1px dashed #ccc;
     background: #fafafa;
     padding: 0.4rem 0.5rem;
+    break-inside: avoid;
   }
 
   .tech-list__section--featured {
-    border-color: var(--color-accent-primary, #6c63ff);
+    border-color: #6c63ff;
     background: #f0eeff;
     padding: 0.4rem 0.5rem;
     box-shadow: none;
+    break-inside: avoid;
   }
 
   .tech-list__section-title {
     font-size: 0.85rem;
     color: #111;
+    text-shadow: none;
   }
 
   .tech-list__section-desc {
@@ -384,15 +387,26 @@
   .tech-list__group {
     gap: 0.3rem;
     break-inside: avoid;
+    background: #f9f9f9;
+    border-color: #ddd;
+    box-shadow: none;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .tech-list__group::before {
+    display: none;
   }
 
   .tech-list__group-header {
-    border-bottom-color: #ccc;
+    border-bottom-color: #ddd;
     padding-bottom: 0.2rem;
   }
 
   .tech-list__group-icon {
     font-size: 0.9rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #ebebeb;
   }
 
   .tech-list__group-title {
@@ -403,6 +417,7 @@
   .tech-list__group-count {
     font-size: 0.65rem;
     color: #888;
+    background: #ebebeb;
   }
 
   .tech-list__chips {
@@ -417,7 +432,12 @@
     color: #333;
     gap: 0.2rem;
     backdrop-filter: none;
+    box-shadow: none;
     opacity: 1 !important;
+  }
+
+  .tech-chip::after {
+    display: none;
   }
 
   .tech-chip--featured {
