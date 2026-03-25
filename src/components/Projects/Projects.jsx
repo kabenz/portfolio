@@ -16,6 +16,9 @@ function ProjectCard({ project, index }) {
         className={`project-card__inner ${flipped ? "project-card__inner--flipped" : ""}`}
       >
         <div className="project-card__front">
+          {project.featured && (
+            <div className="project-card__featured-badge">Featured</div>
+          )}
           <div
             className="project-card__gradient"
             style={{ background: project.gradient }}
@@ -89,9 +92,6 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
       </div>
-      {project.featured && (
-        <div className="project-card__featured-badge">Featured</div>
-      )}
     </div>
   );
 }
