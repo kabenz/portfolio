@@ -277,10 +277,16 @@
     break-inside: avoid;
   }
 
+  .cv__section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
   .cv__education {
     margin-top: 0.6rem;
     gap: 0.6rem;
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 
