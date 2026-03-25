@@ -2,9 +2,11 @@
 /** @import { ExperienceItem } from '../../types/experience.js' */
 import ProfileCard from '../ProfileCard/ProfileCard.jsx'
 import ExperienceList from '../ExperienceList/ExperienceList.jsx'
+import EducationList from '../EducationList/EducationList.jsx'
 import TechList from '../TechList/TechList.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
+import { educationItems, certifications } from '../../data/education.js'
 import './CV.css'
 
 export default function CV() {
@@ -28,6 +30,12 @@ export default function CV() {
               <h2 className="cv__section-title">Professional Experience</h2>
 
               <ExperienceList items={experiences} />
+            </section>
+
+            <section className="cv__education">
+              <h2 className="cv__section-title">Education &amp; Certifications</h2>
+
+              <EducationList educationItems={educationItems} certifications={certifications} />
             </section>
 
             <section className="cv__skills">
