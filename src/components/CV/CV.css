@@ -374,26 +374,57 @@
 
   .cv__projects {
     margin-top: 0.6rem;
-    break-inside: avoid;
-    page-break-inside: avoid;
+  }
+
+  .cv__project-list {
+    gap: 0.45rem;
+    margin-top: 0.3rem;
+    break-before: avoid;
+    page-break-before: avoid;
   }
 
   .cv__project-item {
+    border-left-color: #6c63ff;
+    padding-left: 0.65rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .cv__project-name,
-  .cv__project-label,
-  .cv__project-desc,
-  .cv__project-bullets {
-    font-size: 0.78rem;
+  .cv__project-header {
+    margin-bottom: 2px;
+  }
+
+  .cv__project-name {
+    font-size: 0.82rem;
+    color: #111;
+  }
+
+  .cv__project-link {
+    font-size: 0.65rem;
+    color: #6c63ff;
+  }
+
+  .cv__project-desc {
+    font-size: 0.76rem;
     color: #333;
+    line-height: 1.4;
+    margin-bottom: 2px;
   }
 
   .cv__project-label {
     font-size: 0.65rem;
     color: #6c63ff;
+  }
+
+  .cv__project-bullets {
+    font-size: 0.74rem;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .cv__project-tags {
+    gap: 0.25rem;
+    margin-top: 0.25rem;
   }
 
   .cv__project-tag {
