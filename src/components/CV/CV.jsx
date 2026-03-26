@@ -74,9 +74,13 @@ export default function CV() {
                         ))}
                       </ul>
                     )}
-                    <p className="cv__project-stack">
-                      {project.technologies.join(' · ')}
-                    </p>
+                    {project.technologies && project.technologies.length > 0 && (
+                      <div className="cv__project-tags">
+                        {project.technologies.map((tech) => (
+                          <span key={tech} className="cv__project-tag">{tech}</span>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
