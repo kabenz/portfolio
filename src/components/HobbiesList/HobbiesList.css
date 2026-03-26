@@ -1,0 +1,126 @@
+/* ── Grid layout ── */
+.hobbies-list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* ── Stacked layout ── */
+.hobbies-list--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.hobbies-list--stacked .hobby-card {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--spacing-md);
+}
+
+.hobbies-list--stacked .hobby-card__icon {
+  flex-shrink: 0;
+}
+
+/* ── Individual hobby card ── */
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.hobby-card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-4px);
+}
+
+.hobby-card__icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.hobby-card__name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.hobby-card__desc {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hobbies-list--grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .hobbies-list--stacked .hobby-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ── Print / PDF export ── */
+@media print {
+  .hobbies-list--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .hobbies-list--stacked {
+    gap: 0.4rem;
+  }
+
+  .hobbies-list--stacked .hobby-card {
+    flex-direction: row;
+  }
+
+  .hobby-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem 0.6rem;
+    box-shadow: none;
+    transform: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    gap: 0.2rem;
+  }
+
+  .hobby-card__icon {
+    font-size: 1.4rem;
+  }
+
+  .hobby-card__name {
+    font-size: 0.82rem;
+    background: none;
+    -webkit-text-fill-color: #6c63ff;
+    color: #6c63ff;
+  }
+
+  .hobby-card__desc {
+    font-size: 0.74rem;
+    color: #333;
+    line-height: 1.4;
+  }
+}

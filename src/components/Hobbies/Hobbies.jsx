@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import hobbies from '../../data/hobbies.js'
+import HobbiesList from '../HobbiesList/HobbiesList.jsx'
 import './Hobbies.css'
 
 export default function Hobbies() {
@@ -28,19 +29,7 @@ export default function Hobbies() {
           </p>
         </div>
 
-        <div className="hobbies__grid fade-in">
-          {sorted.map(hobby => (
-            <div key={hobby.id} className="hobby-card">
-              {hobby.icon && (
-                <span className="hobby-card__icon" aria-hidden="true">{hobby.icon}</span>
-              )}
-              <h3 className="hobby-card__name">{hobby.name}</h3>
-              {hobby.description && (
-                <p className="hobby-card__desc">{hobby.description}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        <HobbiesList hobbies={sorted} />
       </div>
     </section>
   )
