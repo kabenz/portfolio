@@ -19,6 +19,15 @@ export const educationItems = [
       'AI'
     ],
   },
+  {
+    id: 'ips-est-electronic-engineering-computers',
+    institution: 'Instituto Politécnico de Setúbal - Escola Superior de Tecnologia',
+    degree: 'CET in Electronics Engineering and Computers',
+    field: 'Electronics Engineering and Computers',
+    startDate: 'Sep 2014',
+    endDate: 'Jul 2015',
+    courses: []
+  },
 ]
 
 /** @type {CertificationItem[]} */
