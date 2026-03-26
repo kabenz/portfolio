@@ -27,7 +27,7 @@ const projects = [
     description:
       "Personal portfolio website showcasing projects, skills, and experience.",
     repoUrl: "https://github.com/kabenz/portfolio",
-    demoUrl: null,
+    demoUrl: "https://kabenz.github.io/portfolio/",
     technologies: ["React", "Vite", "JavaScript", "CSS"],
     responsibilities: [
       "Architected a single-page React application with client-side routing.",
