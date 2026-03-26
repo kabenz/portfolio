@@ -4,32 +4,40 @@
 
 const projects = [
   {
-    id: 1,
-    title: "AT Data Hub",
+    id: "at-data-hub",
+    name: "AT Data Hub",
     description:
       "Portal that fetches data from AT Portal for accountants and tax professionals.",
-    longDesc:
-      "Built with React and Go. It makes uses of Playwright for backend data scraping and Postgres for storage. The frontend features a clean UI with Tailwind CSS, showcasing data insights and automated syncronization with AT Portal. Designed for scalability and ease of use by accounting professionals.",
-    tags: ["React", "Go", "Postgres", "Playwright", "Tailwind CSS"],
-    category: "Full Stack Development",
-    live: null,
-    gradient: "linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%)",
-    icon: "💼",
-    featured: true,
+    repoUrl: null,
+    demoUrl: null,
+    technologies: ["React", "Go", "Postgres", "Playwright", "Tailwind CSS"],
+    responsibilities: [
+      "Designed and implemented a Go backend with Playwright-based scraping to automate AT Portal data retrieval.",
+      "Built a React frontend with Tailwind CSS for clean data visualization.",
+      "Set up Postgres schema and automated sync pipelines.",
+    ],
+    outcomes: [
+      "Reduced manual data-entry time for accounting professionals.",
+      "Delivered a scalable multi-user portal ready for production use.",
+    ],
   },
   {
-    id: 2,
-    title: "My Own Portfolio Website",
+    id: "portfolio-website",
+    name: "Personal Portfolio Website",
     description:
       "Personal portfolio website showcasing projects, skills, and experience.",
-    longDesc:
-      "Built with React and Vite. Features interactive project cards, experience timeline, and responsive design. Optimized for performance and accessibility.",
-    tags: ["React", "Vite", "JavaScript", "CSS"],
-    category: "Web Development",
-    live: null,
-    gradient: "linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%)",
-    icon: "💼",
-    featured: false,
+    repoUrl: "https://github.com/kabenz/portfolio",
+    demoUrl: null,
+    technologies: ["React", "Vite", "JavaScript", "CSS"],
+    responsibilities: [
+      "Architected a single-page React application with client-side routing.",
+      "Implemented responsive design and accessibility best practices.",
+      "Optimised Vite build pipeline for fast load times.",
+    ],
+    outcomes: [
+      "Publicly accessible portfolio demonstrating full-stack skills.",
+      "Reusable component library used across multiple sections.",
+    ],
   },
 ];
 

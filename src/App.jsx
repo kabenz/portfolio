@@ -16,6 +16,18 @@ function App() {
   const raw = window.location.pathname
   const path = raw.startsWith(base) ? raw.slice(base.length) || '/' : raw
 
+  if (path === '/projects') {
+    return (
+      <>
+        <Header />
+        <main>
+          <Projects />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   if (path === '/cv') {
     return <CV />
   }
