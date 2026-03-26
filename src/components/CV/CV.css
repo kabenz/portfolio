@@ -204,6 +204,16 @@
   margin-bottom: 4px;
 }
 
+.cv__project-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
 .cv__project-bullets {
   margin: 0 0 4px;
   padding-left: 1.1rem;
@@ -374,10 +384,16 @@
   }
 
   .cv__project-name,
+  .cv__project-label,
   .cv__project-desc,
   .cv__project-bullets {
     font-size: 0.78rem;
     color: #333;
+  }
+
+  .cv__project-label {
+    font-size: 0.65rem;
+    color: #6c63ff;
   }
 
   .cv__project-tag {

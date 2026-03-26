@@ -61,18 +61,24 @@ export default function CV() {
                     </div>
                     <p className="cv__project-desc">{project.description}</p>
                     {project.responsibilities && project.responsibilities.length > 0 && (
-                      <ul className="cv__project-bullets">
-                        {project.responsibilities.map((responsibility, index) => (
-                          <li key={index}>{responsibility}</li>
-                        ))}
-                      </ul>
+                      <>
+                        <p className="cv__project-label">Responsibilities</p>
+                        <ul className="cv__project-bullets">
+                          {project.responsibilities.map((responsibility, index) => (
+                            <li key={index}>{responsibility}</li>
+                          ))}
+                        </ul>
+                      </>
                     )}
                     {project.outcomes && project.outcomes.length > 0 && (
-                      <ul className="cv__project-bullets">
-                        {project.outcomes.map((outcome, index) => (
-                          <li key={index}>{outcome}</li>
-                        ))}
-                      </ul>
+                      <>
+                        <p className="cv__project-label">Outcomes</p>
+                        <ul className="cv__project-bullets">
+                          {project.outcomes.map((outcome, index) => (
+                            <li key={index}>{outcome}</li>
+                          ))}
+                        </ul>
+                      </>
                     )}
                     {project.technologies && project.technologies.length > 0 && (
                       <div className="cv__project-tags">
