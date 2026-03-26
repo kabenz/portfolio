@@ -239,6 +239,41 @@
   color: var(--color-text-muted);
 }
 
+.cv__hobbies {
+  margin-top: var(--spacing-lg);
+}
+
+.cv__hobby-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cv__hobby-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.cv__hobby-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cv__hobby-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cv__hobby-desc {
+  color: var(--color-text-secondary);
+}
+
 @media (max-width: 700px) {
   .cv__body {
     grid-template-columns: 1fr;
@@ -432,6 +467,33 @@
     background: #f5f5f5;
     border-color: #ddd;
     color: #555;
+  }
+
+  .cv__hobbies {
+    margin-top: 0.6rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv__hobby-list {
+    gap: 0.25rem;
+  }
+
+  .cv__hobby-item {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .cv__hobby-icon {
+    font-size: 0.88rem;
+  }
+
+  .cv__hobby-name {
+    color: #111;
+  }
+
+  .cv__hobby-desc {
+    color: #333;
   }
 }
 
