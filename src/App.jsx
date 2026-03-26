@@ -5,6 +5,7 @@ import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Education from './components/Education/Education'
 import Projects from './components/Projects/Projects'
+import Hobbies from './components/Hobbies/Hobbies'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import CV from './components/CV/CV'
@@ -56,6 +57,18 @@ function App() {
     )
   }
 
+  if (path === '/hobbies') {
+    return (
+      <>
+        <Header />
+        <main>
+          <Hobbies />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   if (path === '/education') {
     return (
       <>
@@ -78,6 +91,7 @@ function App() {
         <Experience />
         <Education />
         <Projects />
+        <Hobbies />
         <Contact />
       </main>
       <Footer />

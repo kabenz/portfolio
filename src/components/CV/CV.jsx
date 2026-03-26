@@ -9,6 +9,7 @@ import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
 import { educationItems, certifications } from '../../data/education.js'
 import projects from '../../data/projects.js'
+import hobbies from '../../data/hobbies.js'
 import './CV.css'
 
 export default function CV() {
@@ -96,6 +97,26 @@ export default function CV() {
               <h2 className="cv__section-title">Technologies &amp; Skills</h2>
 
               <TechList compact />
+            </section>
+
+            <section className="cv__hobbies">
+              <h2 className="cv__section-title">Hobbies &amp; Interests</h2>
+
+              <ul className="cv__hobby-list">
+                {[...hobbies]
+                  .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
+                  .map(hobby => (
+                    <li key={hobby.id} className="cv__hobby-item">
+                      {hobby.icon && (
+                        <span className="cv__hobby-icon" aria-hidden="true">{hobby.icon}</span>
+                      )}
+                      <span className="cv__hobby-name">{hobby.name}</span>
+                      {hobby.description && (
+                        <span className="cv__hobby-desc"> — {hobby.description}</span>
+                      )}
+                    </li>
+                  ))}
+              </ul>
             </section>
           </main>
         </div>
