@@ -7,6 +7,7 @@ import TechList from '../TechList/TechList.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
 import { educationItems, certifications } from '../../data/education.js'
+import projects from '../../data/projects.js'
 import './CV.css'
 
 const GitHubIcon = () => (
@@ -213,6 +214,56 @@ export default function CV() {
 
             <TechList compact />
           </section>
+
+          {projects.length > 0 && (
+            <section className="cv__projects">
+              <h2 className="cv__section-title">Side Projects</h2>
+
+              <ul className="cv__proj-list">
+                {projects.map((proj) => (
+                  <li key={proj.id} className="cv__proj-entry">
+                    <div className="cv__proj-header">
+                      <div>
+                        <span className="cv__proj-name">{proj.name}</span>
+                        {(proj.repoUrl || proj.demoUrl) && (
+                          <span className="cv__proj-links">
+                            {proj.repoUrl && (
+                              <a href={proj.repoUrl} target="_blank" rel="noopener noreferrer" className="cv__proj-link">GitHub</a>
+                            )}
+                            {proj.demoUrl && (
+                              <a href={proj.demoUrl} target="_blank" rel="noopener noreferrer" className="cv__proj-link">Demo</a>
+                            )}
+                          </span>
+                        )}
+                      </div>
+                      {proj.technologies?.length > 0 && (
+                        <div className="cv__proj-tags">
+                          {proj.technologies.map((tech) => (
+                            <span key={tech} className="cv__proj-tag">{tech}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <p className="cv__proj-description">{proj.description}</p>
+                    {proj.responsibilities?.length > 0 && (
+                      <ul className="cv__proj-achievements">
+                        {proj.responsibilities.map((r, i) => (
+                          <li key={`${proj.id}-r-${i}`} className="cv__proj-achievement">{r}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {proj.outcomes?.length > 0 && (
+                      <ul className="cv__proj-achievements">
+                        {proj.outcomes.map((o, i) => (
+                          <li key={`${proj.id}-o-${i}`} className="cv__proj-achievement">{o}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </main>
       </div>
     </div>
