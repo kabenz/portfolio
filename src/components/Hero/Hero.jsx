@@ -67,11 +67,11 @@ export default function Hero() {
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </button>
-          <a href="/resume.pdf" className="btn btn--outline" target="_blank" rel="noopener noreferrer">
+          <a href="/cv" className="btn btn--outline" target="_blank" rel="noopener noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-            <span>Download Resume</span>
+            <span>Export CV as PDF</span>
           </a>
         </div>
 
