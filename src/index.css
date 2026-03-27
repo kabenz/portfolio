@@ -160,3 +160,17 @@ ul, ol {
   background: rgba(108, 99, 255, 0.2);
   color: var(--color-text-primary);
 }
+
+/* ── Print / PDF ── */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    orphans: 2;
+    widows: 2;
+  }
+}
