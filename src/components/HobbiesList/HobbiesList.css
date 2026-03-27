@@ -5,6 +5,11 @@
   gap: var(--spacing-md);
 }
 
+/* Cards with photos need more room */
+.hobbies-list--grid .hobby-card--has-photos {
+  grid-column: span 2;
+}
+
 /* ── Stacked layout ── */
 .hobbies-list--stacked {
   display: flex;
@@ -66,6 +71,39 @@
   margin: 0;
 }
 
+/* ── Photo gallery ── */
+.hobby-card__photos {
+  display: flex;
+  gap: var(--spacing-xs, 0.5rem);
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border, #ccc) transparent;
+}
+
+.hobby-card__photos::-webkit-scrollbar {
+  height: 4px;
+}
+
+.hobby-card__photos::-webkit-scrollbar-thumb {
+  background: var(--color-border, #ccc);
+  border-radius: 2px;
+}
+
+.hobby-card__photo {
+  width: 100px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-sm, 6px);
+  flex-shrink: 0;
+  transition: transform var(--transition-normal, 0.2s);
+}
+
+.hobby-card__photo:hover {
+  transform: scale(1.05);
+}
+
 /* ── Responsive ── */
 
 /* Large tablets / small desktops: 3 columns avoids the 4+1 orphan */
@@ -82,8 +120,12 @@
     gap: var(--spacing-sm);
   }
 
+  .hobbies-list--grid .hobby-card--has-photos {
+    grid-column: 1 / -1;
+  }
+
   /* Center the orphaned last card when it falls alone on a new row */
-  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
+  .hobbies-list--grid > .hobby-card:not(.hobby-card--has-photos):last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: calc(50% - var(--spacing-sm) / 2);
     margin-inline: auto;
@@ -98,6 +140,11 @@
     align-items: center;
     text-align: center;
   }
+
+  .hobby-card__photo {
+    width: 80px;
+    height: 58px;
+  }
 }
 
 /* Mobile: single column */
@@ -107,7 +154,11 @@
     gap: var(--spacing-sm);
   }
 
-  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
+  .hobbies-list--grid .hobby-card--has-photos {
+    grid-column: auto;
+  }
+
+  .hobbies-list--grid > .hobby-card:not(.hobby-card--has-photos):last-child:nth-child(odd) {
     grid-column: auto;
     max-width: none;
     margin-inline: 0;
@@ -120,6 +171,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.4rem;
+  }
+
+  .hobbies-list--grid .hobby-card--has-photos {
+    grid-column: auto;
   }
 
   .hobbies-list--stacked {
@@ -157,5 +212,10 @@
     font-size: 0.74rem;
     color: #333;
     line-height: 1.4;
+  }
+
+  /* Hide photos from CV/PDF export */
+  .hobby-card__photos {
+    display: none;
   }
 }

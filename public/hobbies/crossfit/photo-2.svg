@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8a65;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d84315;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect x="80" y="200" width="240" height="40" rx="6" fill="#bf360c" opacity="0.6"/>
+  <rect x="60" y="140" width="280" height="60" rx="4" fill="white" opacity="0.15"/>
+  <line x1="200" y1="80" x2="200" y2="200" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="130" cy="160" r="28" fill="white" opacity="0.6"/>
+  <circle cx="270" cy="160" r="28" fill="white" opacity="0.6"/>
+  <text x="200" y="268" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🏋️ Barbell</text>
+</svg>

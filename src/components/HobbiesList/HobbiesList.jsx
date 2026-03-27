@@ -12,7 +12,7 @@ export default function HobbiesList({ hobbies, layout = 'grid' }) {
       {hobbies.map((hobby, index) => (
         <div
           key={hobby.id}
-          className="hobby-card fade-in"
+          className={`hobby-card fade-in${hobby.photos?.length ? ' hobby-card--has-photos' : ''}`}
           role="listitem"
           style={{ transitionDelay: `${index * 0.08}s` }}
         >
@@ -22,6 +22,19 @@ export default function HobbiesList({ hobbies, layout = 'grid' }) {
           <h3 className="hobby-card__name">{hobby.name}</h3>
           {hobby.description && (
             <p className="hobby-card__desc">{hobby.description}</p>
+          )}
+          {hobby.photos?.length > 0 && (
+            <div className="hobby-card__photos" aria-label={`Photos of ${hobby.name}`}>
+              {hobby.photos.map((photo, i) => (
+                <img
+                  key={i}
+                  src={`${import.meta.env.BASE_URL}${photo.src}`}
+                  alt={photo.alt ?? hobby.name}
+                  className="hobby-card__photo"
+                  loading="lazy"
+                />
+              ))}
+            </div>
           )}
         </div>
       ))}
