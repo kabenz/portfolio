@@ -476,16 +476,19 @@
   }
 
   .cv__hobby-list {
-    gap: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem 1rem;
   }
 
   .cv__hobby-item {
     font-size: 0.78rem;
     line-height: 1.4;
+    gap: 0.3rem;
   }
 
   .cv__hobby-icon {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
   }
 
   .cv__hobby-name {
@@ -493,7 +496,7 @@
   }
 
   .cv__hobby-desc {
-    color: #333;
+    color: #444;
   }
 }
 
