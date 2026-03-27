@@ -1,4 +1,5 @@
 /** @import { Profile } from '../types/profile.js' */
+import profilePhoto from '../assets/profile.svg'
 
 /** @type {Profile} */
 const profile = {
@@ -25,6 +26,13 @@ const profile = {
     phone: 'cv',
   },
   status: 'Open to interesting opportunities',
+  /**
+   * Path to the profile photo.
+   * Replace src/assets/profile.svg with your photo (e.g. src/assets/profile.jpg),
+   * update the import above, and set this field to the imported value.
+   * Set to null to fall back to the initials avatar.
+   */
+  photo: profilePhoto,
 }
 
 export default profile
