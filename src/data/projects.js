@@ -27,7 +27,7 @@ const projects = [
     description:
       "Personal portfolio website showcasing projects, skills, and experience.",
     repoUrl: "https://github.com/kabenz/portfolio",
-    demoUrl: "https://kabenz.github.io/portfolio/",
+    demoUrl: null,
     technologies: ["React", "Vite", "JavaScript", "CSS"],
     responsibilities: [
       "Architected a single-page React application with client-side routing.",
@@ -35,7 +35,7 @@ const projects = [
       "Optimised Vite build pipeline for fast load times.",
     ],
     outcomes: [
-      "Publicly accessible portfolio demonstrating full-stack skills.",
+      "Publicly accessible portfolio demonstrating my career and projects.",
       "Reusable component library used across multiple sections.",
     ],
   },
