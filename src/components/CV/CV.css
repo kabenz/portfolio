@@ -82,6 +82,15 @@
   gap: var(--spacing-lg);
 }
 
+.cv__exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
 .cv__exp-entry {
   display: flex;
   flex-direction: column;
@@ -182,6 +191,125 @@
   flex-direction: column;
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
+}
+
+.cv__edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cv__edu-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.cv__edu-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv__edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.cv__edu-degree {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.cv__edu-institution {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cv__edu-period {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.cv__edu-details {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+.cv__edu-courses {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.cv__cert-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cv__cert-group-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cv__cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cv__cert-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cv__cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.cv__cert-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cv__cert-meta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.cv__cert-issuer {
+  color: var(--color-accent-primary);
+}
+
+.cv__cert-date {
+  color: var(--color-text-muted);
 }
 
 .cv__projects {
@@ -376,6 +504,10 @@
     gap: 0.6rem;
   }
 
+  .cv__exp-list {
+    gap: 0.6rem;
+  }
+
   .cv__exp-entry {
     padding-bottom: 0.6rem;
     border-bottom-color: #eee;
@@ -435,8 +567,78 @@
   .cv__education {
     margin-top: 0.6rem;
     gap: 0.6rem;
+  }
+
+  .cv__edu-list {
+    gap: 0.5rem;
+  }
+
+  .cv__edu-entry {
+    padding-bottom: 0.5rem;
+    border-bottom-color: #eee;
+    gap: 0.15rem;
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .cv__edu-degree {
+    font-size: 0.85rem;
+    color: #111;
+  }
+
+  .cv__edu-institution {
+    font-size: 0.82rem;
+    background: none;
+    -webkit-text-fill-color: #6c63ff;
+    color: #6c63ff;
+  }
+
+  .cv__edu-period {
+    font-size: 0.72rem;
+    color: #555;
+  }
+
+  .cv__edu-details {
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  .cv__edu-courses {
+    font-size: 0.72rem;
+    color: #666;
+  }
+
+  .cv__cert-group {
+    gap: 0.35rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv__cert-group-title {
+    font-size: 0.8rem;
+    color: #111;
+    border-bottom-color: #ccc;
+  }
+
+  .cv__cert-list {
+    gap: 0.25rem;
+  }
+
+  .cv__cert-name {
+    font-size: 0.8rem;
+    color: #111;
+  }
+
+  .cv__cert-meta {
+    font-size: 0.72rem;
+  }
+
+  .cv__cert-issuer {
+    color: #6c63ff;
+  }
+
+  .cv__cert-date {
+    color: #666;
   }
 
   .cv__projects {

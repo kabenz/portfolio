@@ -4,8 +4,6 @@
 import { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
 import ProfileCard from '../ProfileCard/ProfileCard.jsx'
-import ExperienceList from '../ExperienceList/ExperienceList.jsx'
-import EducationList from '../EducationList/EducationList.jsx'
 import TechList from '../TechList/TechList.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
@@ -49,13 +47,111 @@ export default function CV() {
             <section className="cv__experience">
               <h2 className="cv__section-title">Professional Experience</h2>
 
-              <ExperienceList items={experiences} />
+              <ul className="cv__exp-list">
+                {[...experiences]
+                  .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0))
+                  .map((exp) => {
+                    const period = `${exp.startDate} – ${exp.endDate ?? 'Present'}`
+                    return (
+                      <li key={exp.id} className="cv__exp-entry">
+                        <div className="cv__exp-header">
+                          <div>
+                            <span className="cv__exp-role">{exp.role}</span>
+                            <span className="cv__exp-company"> · {exp.company}</span>
+                          </div>
+                          <div className="cv__exp-meta">
+                            <span className="cv__exp-period">{period}</span>
+                            {exp.location && (
+                              <span className="cv__exp-location">{exp.location}</span>
+                            )}
+                          </div>
+                        </div>
+                        <p className="cv__exp-description">{exp.summary}</p>
+                        {exp.responsibilities?.length > 0 && (
+                          <ul className="cv__exp-achievements">
+                            {exp.responsibilities.map((r, i) => (
+                              <li key={`${exp.id}-r-${i}`} className="cv__exp-achievement">{r}</li>
+                            ))}
+                          </ul>
+                        )}
+                        {exp.achievements?.length > 0 && (
+                          <ul className="cv__exp-achievements">
+                            {exp.achievements.map((a, i) => (
+                              <li key={`${exp.id}-a-${i}`} className="cv__exp-achievement">{a}</li>
+                            ))}
+                          </ul>
+                        )}
+                        {exp.technologies?.length > 0 && (
+                          <div className="cv__exp-tags">
+                            {exp.technologies.map((tech) => (
+                              <span key={tech} className="cv__exp-tag">{tech}</span>
+                            ))}
+                          </div>
+                        )}
+                      </li>
+                    )
+                  })}
+              </ul>
             </section>
 
             <section className="cv__education">
               <h2 className="cv__section-title">Education &amp; Certifications</h2>
 
-              <EducationList educationItems={educationItems} certifications={certifications} />
+              <ul className="cv__edu-list">
+                {[...educationItems]
+                  .sort((a, b) => {
+                    const aYear = a.endDate ? new Date(a.endDate).getTime() : Infinity
+                    const bYear = b.endDate ? new Date(b.endDate).getTime() : Infinity
+                    return bYear - aYear
+                  })
+                  .map((edu) => {
+                    const period = `${edu.startDate} – ${edu.endDate ?? 'Present'}`
+                    return (
+                      <li key={edu.id} className="cv__edu-entry">
+                        <div className="cv__edu-header">
+                          <div>
+                            <span className="cv__edu-degree">{edu.degree}</span>
+                            <span className="cv__edu-institution"> · {edu.institution}</span>
+                          </div>
+                          <span className="cv__edu-period">{period}</span>
+                        </div>
+                        {(edu.concentration || edu.specialization) && (
+                          <p className="cv__edu-details">
+                            {[edu.concentration, edu.specialization]
+                              .filter(Boolean)
+                              .join(' · ')}
+                          </p>
+                        )}
+                        {edu.courses?.length > 0 && (
+                          <p className="cv__edu-courses">
+                            {edu.courses.join(', ')}
+                          </p>
+                        )}
+                      </li>
+                    )
+                  })}
+              </ul>
+
+              {certifications?.length > 0 && (
+                <div className="cv__cert-group">
+                  <h3 className="cv__cert-group-title">Certifications</h3>
+                  <ul className="cv__cert-list">
+                    {certifications.map((cert) => (
+                      <li key={cert.id} className="cv__cert-entry">
+                        <div className="cv__cert-header">
+                          <span className="cv__cert-name">{cert.name}</span>
+                          <span className="cv__cert-meta">
+                            <span className="cv__cert-issuer">{cert.issuer}</span>
+                            {cert.date && (
+                              <span className="cv__cert-date"> · {cert.date}</span>
+                            )}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </section>
 
             <section className="cv__projects">
