@@ -7,7 +7,6 @@ import TechList from '../TechList/TechList.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
 import { educationItems, certifications } from '../../data/education.js'
-import projects from '../../data/projects.js'
 import './CV.css'
 
 const GitHubIcon = () => (
@@ -207,58 +206,6 @@ export default function CV() {
                 </ul>
               </div>
             )}
-          </section>
-
-          <section className="cv__projects">
-            <h2 className="cv__section-title">Side Projects</h2>
-
-            <ul className="cv__project-list">
-              {projects.map((project) => (
-                <li key={project.id} className="cv__project-item">
-                  <div className="cv__project-header">
-                    <strong className="cv__project-name">{project.name}</strong>
-                    {project.repoUrl && (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cv__project-link"
-                      >
-                        {project.repoUrl}
-                      </a>
-                    )}
-                  </div>
-                  <p className="cv__project-desc">{project.description}</p>
-                  {project.responsibilities && project.responsibilities.length > 0 && (
-                    <>
-                      <p className="cv__project-label">Responsibilities</p>
-                      <ul className="cv__project-bullets">
-                        {project.responsibilities.map((responsibility, index) => (
-                          <li key={index}>{responsibility}</li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                  {project.outcomes && project.outcomes.length > 0 && (
-                    <>
-                      <p className="cv__project-label">Outcomes</p>
-                      <ul className="cv__project-bullets">
-                        {project.outcomes.map((outcome, index) => (
-                          <li key={index}>{outcome}</li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                  {project.technologies && project.technologies.length > 0 && (
-                    <div className="cv__project-tags">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="cv__project-tag">{tech}</span>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
           </section>
 
           <section className="cv__skills">
