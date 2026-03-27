@@ -66,7 +66,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a href="/resume.pdf" className="header__resume-btn" target="_blank" rel="noopener noreferrer">
+          <a href="/cv" className="header__resume-btn" target="_blank" rel="noopener noreferrer">
             Resume
           </a>
         </nav>
