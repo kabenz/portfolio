@@ -547,7 +547,7 @@
 /* ── Print / PDF ── */
 @media print {
   @page {
-    margin: 1.2cm 1.5cm;
+    margin: 16mm;
     size: A4;
   }
 
@@ -739,6 +739,13 @@
     font-size: 0.78rem;
     color: #111;
     border-bottom-color: #ccc;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cv__cert-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .cv__cert-list {
