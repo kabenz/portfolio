@@ -5,14 +5,49 @@
 }
 
 .cv__container {
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
+/* ── Header ── */
 .cv__header {
-  padding: var(--spacing-lg) 0 var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 2px solid var(--color-border);
   margin-bottom: var(--spacing-lg);
+}
+
+.cv__header-inner {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+/* Avatar circle */
+.cv__avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cv__avatar-initials {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+/* Identity text area */
+.cv__header-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .cv__header-top {
@@ -20,15 +55,16 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 .cv__print-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-shrink: 0;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-accent-primary);
   background: transparent;
@@ -45,48 +81,87 @@
 
 .cv__name {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
 }
 
 .cv__summary {
   color: var(--color-text-secondary);
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: 680px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
 }
 
-.cv__body {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: var(--spacing-lg);
-  align-items: start;
+/* Contact strip */
+.cv__contact-strip {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
 }
 
-/* ── Experience section ── */
-.cv__section-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 1px solid var(--color-border);
+.cv__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
 }
 
-.cv__experience {
+.cv__contact-link {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+}
+
+.cv__contact-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Main content (full-width, single column) ── */
+.cv__main {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+}
+
+/* ── Section titles ── */
+.cv__section-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-border);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Experience ── */
+.cv__experience {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cv__exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .cv__exp-entry {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  padding-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
   border-bottom: 1px solid var(--color-card-border);
 }
 
@@ -170,25 +245,21 @@
   color: var(--color-text-muted);
 }
 
+/* ── Skills ── */
 .cv__skills {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
 }
 
+/* ── Education ── */
 .cv__education {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
 }
 
-.cv__projects {
-  margin-top: var(--spacing-lg);
-}
-
-.cv__project-list {
+.cv__edu-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -197,114 +268,133 @@
   gap: var(--spacing-md);
 }
 
-.cv__project-item {
-  border-left: 2px solid var(--color-accent-primary);
-  padding-left: var(--spacing-md);
+.cv__edu-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-card-border);
 }
 
-.cv__project-header {
+.cv__edu-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv__edu-header {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
-  margin-bottom: 4px;
 }
 
-.cv__project-name {
+.cv__edu-degree {
   font-size: 0.95rem;
+  font-weight: 700;
   color: var(--color-text-primary);
 }
 
-.cv__project-link {
-  font-size: 0.78rem;
-  color: var(--color-accent-primary);
-  text-decoration: none;
+.cv__edu-institution {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.cv__project-link:hover {
-  text-decoration: underline;
+.cv__edu-period {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
 }
 
-.cv__project-desc {
-  font-size: 0.85rem;
-  color: var(--color-text-secondary);
-  line-height: 1.55;
-  margin-bottom: 4px;
-}
-
-.cv__project-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--color-accent-primary);
-  margin-top: 4px;
-  margin-bottom: 2px;
-}
-
-.cv__project-bullets {
-  margin: 0 0 4px;
-  padding-left: 1.1rem;
+.cv__edu-details {
   font-size: 0.82rem;
   color: var(--color-text-secondary);
+}
+
+.cv__edu-courses {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
 
-.cv__project-tags {
+.cv__cert-group {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.35rem;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
 }
 
-.cv__project-tag {
-  font-size: 0.72rem;
-  font-weight: 500;
-  padding: 0.2rem 0.55rem;
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-full);
-  color: var(--color-text-muted);
+.cv__cert-group-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.cv__hobbies {
-  margin-top: var(--spacing-lg);
-}
-
-.cv__hobby-list {
+.cv__cert-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
-.cv__hobby-item {
+.cv__cert-entry {
   display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cv__cert-header {
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.cv__cert-name {
   font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-.cv__hobby-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.cv__hobby-name {
   font-weight: 600;
   color: var(--color-text-primary);
 }
 
-.cv__hobby-desc {
-  color: var(--color-text-secondary);
+.cv__cert-meta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
 }
 
-@media (max-width: 700px) {
-  .cv__body {
-    grid-template-columns: 1fr;
+.cv__cert-issuer {
+  color: var(--color-accent-primary);
+}
+
+.cv__cert-date {
+  color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .cv__header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cv__contact-strip {
+    justify-content: center;
+  }
+
+  .cv__header-top {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
   }
 
   .cv__exp-header {
@@ -320,6 +410,7 @@
   }
 }
 
+/* ── Print / PDF ── */
 @media print {
   @page {
     margin: 1.2cm 1.5cm;
@@ -341,47 +432,82 @@
   }
 
   .cv__header {
-    padding: 0 0 0.6rem;
-    margin-bottom: 0.8rem;
+    padding: 0 0 0.5rem;
+    margin-bottom: 0.7rem;
     border-bottom-color: #ccc;
+    border-bottom-width: 1px;
+  }
+
+  .cv__header-inner {
+    gap: 0.8rem;
+  }
+
+  .cv__avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cv__avatar-initials {
+    font-size: 1.2rem;
+  }
+
+  .cv__header-top {
+    margin-bottom: 0.2rem;
   }
 
   .cv__name {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #111;
-    margin-bottom: 0.25rem;
   }
 
   .cv__summary {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #333;
-    line-height: 1.5;
-    max-width: 100%;
+    line-height: 1.45;
+    margin-bottom: 0.3rem;
   }
 
-  .cv__body {
-    grid-template-columns: 220px 1fr;
-    gap: 1.2rem;
+  .cv__contact-strip {
+    gap: 0.2rem 0.75rem;
+  }
+
+  .cv__contact-item {
+    font-size: 0.7rem;
+    color: #444;
+  }
+
+  .cv__contact-link {
+    color: #1a0dab;
+  }
+
+  .cv__main {
+    gap: 0.7rem;
   }
 
   .cv__section-title {
-    font-size: 0.95rem;
+    font-size: 0.78rem;
     color: #111;
     border-bottom-color: #ccc;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+    padding-bottom: 0.2rem;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .cv__experience {
-    gap: 0.6rem;
+    gap: 0.5rem;
+  }
+
+  .cv__exp-list {
+    gap: 0.5rem;
   }
 
   .cv__exp-entry {
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
     border-bottom-color: #eee;
     break-inside: avoid;
     page-break-inside: avoid;
-    gap: 0.3rem;
+    gap: 0.2rem;
   }
 
   .cv__exp-role {
@@ -398,137 +524,108 @@
 
   .cv__exp-period,
   .cv__exp-location {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: #555;
   }
 
   .cv__exp-description {
     font-size: 0.78rem;
     color: #333;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   .cv__exp-achievement {
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     color: #333;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   .cv__exp-tag {
-    font-size: 0.65rem;
+    font-size: 0.63rem;
     background: #f5f5f5;
     border-color: #ddd;
     color: #555;
   }
 
   .cv__skills {
-    margin-top: 0.6rem;
-    gap: 0.6rem;
+    gap: 0.5rem;
     break-inside: avoid;
-  }
-
-  .cv__section-title {
-    break-after: avoid;
-    page-break-after: avoid;
   }
 
   .cv__education {
-    margin-top: 0.6rem;
-    gap: 0.6rem;
+    gap: 0.5rem;
+  }
+
+  .cv__edu-list {
+    gap: 0.4rem;
+  }
+
+  .cv__edu-entry {
+    padding-bottom: 0.4rem;
+    border-bottom-color: #eee;
+    gap: 0.1rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .cv__projects {
-    margin-top: 0.6rem;
-  }
-
-  .cv__project-list {
-    gap: 0.45rem;
-    margin-top: 0.3rem;
-    break-before: avoid;
-    page-break-before: avoid;
-  }
-
-  .cv__project-item {
-    border-left-color: #6c63ff;
-    padding-left: 0.65rem;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .cv__project-header {
-    margin-bottom: 2px;
-  }
-
-  .cv__project-name {
-    font-size: 0.82rem;
+  .cv__edu-degree {
+    font-size: 0.85rem;
     color: #111;
   }
 
-  .cv__project-link {
-    font-size: 0.65rem;
+  .cv__edu-institution {
+    font-size: 0.8rem;
+    background: none;
+    -webkit-text-fill-color: #6c63ff;
     color: #6c63ff;
   }
 
-  .cv__project-desc {
-    font-size: 0.76rem;
-    color: #333;
-    line-height: 1.4;
-    margin-bottom: 2px;
-  }
-
-  .cv__project-label {
-    font-size: 0.65rem;
-    color: #6c63ff;
-  }
-
-  .cv__project-bullets {
-    font-size: 0.74rem;
-    color: #333;
-    line-height: 1.4;
-  }
-
-  .cv__project-tags {
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-  }
-
-  .cv__project-tag {
-    font-size: 0.65rem;
-    background: #f5f5f5;
-    border-color: #ddd;
+  .cv__edu-period {
+    font-size: 0.7rem;
     color: #555;
   }
 
-  .cv__hobbies {
-    margin-top: 0.6rem;
+  .cv__edu-details {
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  .cv__edu-courses {
+    font-size: 0.7rem;
+    color: #666;
+  }
+
+  .cv__cert-group {
+    gap: 0.3rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .cv__hobby-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.2rem 1rem;
-  }
-
-  .cv__hobby-item {
+  .cv__cert-group-title {
     font-size: 0.78rem;
-    line-height: 1.4;
-    gap: 0.3rem;
+    color: #111;
+    border-bottom-color: #ccc;
   }
 
-  .cv__hobby-icon {
-    font-size: 0.82rem;
+  .cv__cert-list {
+    gap: 0.2rem;
   }
 
-  .cv__hobby-name {
+  .cv__cert-name {
+    font-size: 0.78rem;
     color: #111;
   }
 
-  .cv__hobby-desc {
-    color: #444;
+  .cv__cert-meta {
+    font-size: 0.7rem;
   }
-}
 
+  .cv__cert-issuer {
+    color: #6c63ff;
+  }
+
+  .cv__cert-date {
+    color: #666;
+  }
+
+}
