@@ -67,15 +67,50 @@
 }
 
 /* ── Responsive ── */
+
+/* Large tablets / small desktops: 3 columns avoids the 4+1 orphan */
+@media (max-width: 1100px) {
+  .hobbies-list--grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small tablets / large phones: 2-column grid */
 @media (max-width: 640px) {
   .hobbies-list--grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  /* Center the orphaned last card when it falls alone on a new row */
+  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--spacing-sm) / 2);
+    margin-inline: auto;
+  }
+
+  .hobby-card {
+    padding: var(--spacing-md);
   }
 
   .hobbies-list--stacked .hobby-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 480px) {
+  .hobbies-list--grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
   }
 }
 
