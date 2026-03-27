@@ -34,6 +34,7 @@
  * @property {string} [summary]  - Short professional summary
  * @property {string} [status]   - Availability/status text shown in hero badge
  * @property {string} [location] - City / country
+ * @property {string} [photo]    - URL of the profile photo (e.g. '/profile.jpg'). Falls back to initials avatar when omitted.
  *
  * Visibility control
  * @property {ProfileVisibility} [visibility] - Per-field rendering context overrides

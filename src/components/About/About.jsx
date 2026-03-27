@@ -12,6 +12,13 @@ const highlights = [
 export default function About() {
   const sectionRef = useRef(null)
 
+  const initials = profile.fullName
+    .split(' ')
+    .filter(n => n.length > 0)
+    .slice(0, 2)
+    .map(n => n[0])
+    .join('')
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
@@ -36,16 +43,27 @@ export default function About() {
         <div className="about__grid">
           <div className="about__visual fade-in">
             <div className="about__image-wrapper">
-              <div className="about__image-placeholder">
-                <div className="about__avatar-ring" />
-                <div className="about__avatar">
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="about__avatar-svg">
-                    <circle cx="100" cy="80" r="40" fill="rgba(108,99,255,0.2)" stroke="rgba(108,99,255,0.5)" strokeWidth="2"/>
-                    <path d="M40 170 Q40 130 100 130 Q160 130 160 170" fill="rgba(108,99,255,0.15)" stroke="rgba(108,99,255,0.4)" strokeWidth="2"/>
-                  </svg>
-                  <span className="about__avatar-initials">JP</span>
+              {profile.photo ? (
+                <div className="about__image-placeholder">
+                  <div className="about__avatar-ring" />
+                  <img
+                    src={profile.photo}
+                    alt={profile.fullName}
+                    className="about__photo"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className="about__image-placeholder">
+                  <div className="about__avatar-ring" />
+                  <div className="about__avatar">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="about__avatar-svg">
+                      <circle cx="100" cy="80" r="40" fill="rgba(108,99,255,0.2)" stroke="rgba(108,99,255,0.5)" strokeWidth="2"/>
+                      <path d="M40 170 Q40 130 100 130 Q160 130 160 170" fill="rgba(108,99,255,0.15)" stroke="rgba(108,99,255,0.4)" strokeWidth="2"/>
+                    </svg>
+                    <span className="about__avatar-initials">{initials}</span>
+                  </div>
+                </div>
+              )}
               <div className="about__image-decoration about__image-decoration--1" />
               <div className="about__image-decoration about__image-decoration--2" />
             </div>

@@ -39,7 +39,10 @@ export default function CV() {
           <div className="cv__header-inner">
             {/* Avatar */}
             <div className="cv__avatar" aria-hidden="true">
-              <span className="cv__avatar-initials">{initials}</span>
+              {profile.photo
+                ? <img src={profile.photo} alt={profile.fullName} className="cv__avatar-photo" />
+                : <span className="cv__avatar-initials">{initials}</span>
+              }
             </div>
 
             {/* Identity + contact */}
