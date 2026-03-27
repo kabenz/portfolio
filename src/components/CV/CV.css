@@ -15,6 +15,34 @@
   margin-bottom: var(--spacing-lg);
 }
 
+.cv__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.cv__print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  background: transparent;
+  border: 1.5px solid var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.cv__print-btn:hover {
+  background: var(--color-accent-primary);
+  color: white;
+}
+
 .cv__name {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -296,6 +324,10 @@
   @page {
     margin: 1.2cm 1.5cm;
     size: A4;
+  }
+
+  .cv__print-btn {
+    display: none;
   }
 
   .cv {

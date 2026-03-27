@@ -1,6 +1,8 @@
 /** @import { Profile } from '../../types/profile.js' */
 /** @import { ExperienceItem } from '../../types/experience.js' */
 /** @import { ProjectItem } from '../../types/projects.js' */
+import { useRef } from 'react'
+import { useReactToPrint } from 'react-to-print'
 import ProfileCard from '../ProfileCard/ProfileCard.jsx'
 import ExperienceList from '../ExperienceList/ExperienceList.jsx'
 import EducationList from '../EducationList/EducationList.jsx'
@@ -13,14 +15,29 @@ import hobbies from '../../data/hobbies.js'
 import './CV.css'
 
 export default function CV() {
+  const printRef = useRef(null)
+  const handlePrint = useReactToPrint({ contentRef: printRef })
+
   return (
     <div className="cv">
-      <div className="cv__container">
+      <div className="cv__container" ref={printRef}>
         <header className="cv__header">
-          <h1 className="cv__name">{profile.fullName}</h1>
-          {profile.summary && (
-            <p className="cv__summary">{profile.summary}</p>
-          )}
+          <div className="cv__header-top">
+            <div>
+              <h1 className="cv__name">{profile.fullName}</h1>
+              {profile.summary && (
+                <p className="cv__summary">{profile.summary}</p>
+              )}
+            </div>
+            <button className="cv__print-btn" onClick={handlePrint} aria-label="Print or save CV as PDF">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="6 9 6 2 18 2 18 9" />
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                <rect x="6" y="14" width="12" height="8" />
+              </svg>
+              Print / Save as PDF
+            </button>
+          </div>
         </header>
 
         <div className="cv__body">
