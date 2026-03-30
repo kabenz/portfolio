@@ -1,13 +1,9 @@
 /* ── Grid layout ── */
 .hobbies-list--grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 480px));
   gap: var(--spacing-md);
-}
-
-/* Cards with photos need more room */
-.hobbies-list--grid .hobby-card--has-photos {
-  grid-column: span 2;
+  justify-content: center;
 }
 
 /* ── Stacked layout ── */
@@ -106,26 +102,16 @@
 
 /* ── Responsive ── */
 
-/* Large tablets / small desktops: 3 columns avoids the 4+1 orphan */
-@media (max-width: 1100px) {
-  .hobbies-list--grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* Small tablets / large phones: 2-column grid */
 @media (max-width: 640px) {
   .hobbies-list--grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
-  }
-
-  .hobbies-list--grid .hobby-card--has-photos {
-    grid-column: 1 / -1;
+    justify-content: stretch;
   }
 
   /* Center the orphaned last card when it falls alone on a new row */
-  .hobbies-list--grid > .hobby-card:not(.hobby-card--has-photos):last-child:nth-child(odd) {
+  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: calc(50% - var(--spacing-sm) / 2);
     margin-inline: auto;
@@ -152,13 +138,10 @@
   .hobbies-list--grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
+    justify-content: stretch;
   }
 
-  .hobbies-list--grid .hobby-card--has-photos {
-    grid-column: auto;
-  }
-
-  .hobbies-list--grid > .hobby-card:not(.hobby-card--has-photos):last-child:nth-child(odd) {
+  .hobbies-list--grid > .hobby-card:last-child:nth-child(odd) {
     grid-column: auto;
     max-width: none;
     margin-inline: 0;
@@ -171,10 +154,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.4rem;
-  }
-
-  .hobbies-list--grid .hobby-card--has-photos {
-    grid-column: auto;
+    justify-content: stretch;
   }
 
   .hobbies-list--stacked {

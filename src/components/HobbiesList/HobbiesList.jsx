@@ -12,7 +12,7 @@ export default function HobbiesList({ hobbies, layout = 'grid' }) {
       {hobbies.map((hobby, index) => (
         <div
           key={hobby.id}
-          className={`hobby-card fade-in${hobby.photos?.length ? ' hobby-card--has-photos' : ''}`}
+          className="hobby-card fade-in"
           role="listitem"
           style={{ transitionDelay: `${index * 0.08}s` }}
         >
