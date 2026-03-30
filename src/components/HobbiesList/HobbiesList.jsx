@@ -23,6 +23,19 @@ export default function HobbiesList({ hobbies, layout = 'grid' }) {
           {hobby.description && (
             <p className="hobby-card__desc">{hobby.description}</p>
           )}
+          {hobby.photos?.length > 0 && (
+            <div className="hobby-card__photos" aria-label={`Photos of ${hobby.name}`}>
+              {hobby.photos.map((photo, i) => (
+                <img
+                  key={i}
+                  src={`${import.meta.env.BASE_URL}${photo.src}`}
+                  alt={photo.alt ?? hobby.name}
+                  className="hobby-card__photo"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>
