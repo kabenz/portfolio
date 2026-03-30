@@ -118,7 +118,7 @@ export default function About() {
               >
                 Get in Touch
               </a>
-              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn btn--outline" target="_blank" rel="noopener noreferrer">
+              <a href={`${import.meta.env.BASE_URL}cv`} className="btn btn--outline" target="_blank" rel="noopener noreferrer">
                 View Resume
               </a>
             </div>
