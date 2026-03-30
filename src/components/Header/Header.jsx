@@ -67,7 +67,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a href="/cv" className="header__resume-btn" target="_blank" rel="noopener noreferrer">
+          <a href={`${import.meta.env.BASE_URL}cv`} className="header__resume-btn" target="_blank" rel="noopener noreferrer">
             Resume
           </a>
         </nav>
