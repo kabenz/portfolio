@@ -1,5 +1,5 @@
 /** @import { Profile } from '../types/profile.js' */
-import profilePhoto from '../assets/profile.svg'
+import profilePhoto from '../assets/profile.jpg'
 
 /** @type {Profile} */
 const profile = {
@@ -13,7 +13,7 @@ const profile = {
     "that let product teams ship with confidence and without ops friction.",
   location: 'Portugal',
   address: 'Lisbon, Portugal',
-  phone: '+351 900 000 000',
+  phone: '+351 924 222 223',
 
   /**
    * Per-field visibility rules.
