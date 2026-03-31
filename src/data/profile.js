@@ -4,6 +4,7 @@ import profilePhoto from '../assets/profile.jpg'
 /** @type {Profile} */
 const profile = {
   fullName: 'José Perdigão',
+  headline: 'Platform Engineer',
   email: 'zeperdigao.95@gmail.com',
   linkedin: 'https://linkedin.com/in/jose-perdigao/',
   github: 'https://github.com/kabenz',

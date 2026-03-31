@@ -48,7 +48,12 @@ export default function CV() {
             {/* Identity + contact */}
             <div className="cv__header-text">
               <div className="cv__header-top">
-                <h1 className="cv__name">{profile.fullName}</h1>
+                <div className="cv__identity">
+                  <h1 className="cv__name">{profile.fullName}</h1>
+                  {profile.headline && (
+                    <p className="cv__headline">{profile.headline}</p>
+                  )}
+                </div>
                 <div className="cv__actions">
                   <button className="cv__print-btn" onClick={handlePrint} aria-label="Open print dialog to print or save CV as PDF">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -58,10 +63,6 @@ export default function CV() {
                     </svg>
                     Print / Save PDF
                   </button>
-                  <p className="cv__print-note">
-                    Opens your browser print dialog so you can save it as a PDF.
-                    <span className="cv__print-note-mobile"> On mobile, use your browser share or print menu if the PDF option is not shown immediately.</span>
-                  </p>
                 </div>
               </div>
 

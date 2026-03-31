@@ -31,6 +31,7 @@
  * @property {string} [linkedin] - LinkedIn profile URL
  * @property {string} [github]   - GitHub profile URL
  * @property {string} [website]  - Personal website URL
+ * @property {string} [headline] - Short professional title, e.g. 'Platform Engineer'
  * @property {string} [summary]  - Short professional summary
  * @property {string} [status]   - Availability/status text shown in hero badge
  * @property {string} [location] - City / country
