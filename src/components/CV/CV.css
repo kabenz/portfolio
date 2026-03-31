@@ -66,11 +66,18 @@
   margin-bottom: var(--spacing-sm);
 }
 
+.cv__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
 .cv__print-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  flex-shrink: 0;
   padding: 0.4rem 0.9rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -85,6 +92,31 @@
 .cv__print-btn:hover {
   background: var(--color-accent-primary);
   color: white;
+}
+
+.cv__print-note {
+  max-width: 240px;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.cv__print-note-mobile {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .cv__actions {
+    align-items: flex-start;
+  }
+
+  .cv__print-note {
+    max-width: none;
+    text-align: left;
+  }
 }
 
 .cv__name {
