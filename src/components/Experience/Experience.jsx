@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
 import experiences from '../../data/experience.js'
+import { calculateYearsOfExperience } from '../../utils/experienceUtils.js'
 import ExperienceList from '../ExperienceList/ExperienceList.jsx'
 import './Experience.css'
+
+const yearsOfExperience = calculateYearsOfExperience(experiences)
 
 export default function Experience() {
   const sectionRef = useRef(null)
@@ -23,7 +26,7 @@ export default function Experience() {
           <p className="section-label">Career</p>
           <h2 className="section-title">Professional Experience</h2>
           <p className="section-subtitle">
-            7+ years building cloud-native infrastructure and developer platforms across the Azure ecosystem
+            {yearsOfExperience}+ years building cloud-native infrastructure and developer platforms across the Azure ecosystem
           </p>
         </div>
 
