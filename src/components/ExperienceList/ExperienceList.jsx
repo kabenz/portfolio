@@ -1,5 +1,6 @@
 /** @import { ExperienceItem as ExperienceItemType } from '../../types/experience.js' */
 import ExperienceItem from './ExperienceItem.jsx'
+import { parseDateString } from '../../utils/experienceUtils.js'
 import './ExperienceList.css'
 
 /**
@@ -9,9 +10,11 @@ import './ExperienceList.css'
  * @param {{ items: ExperienceItemType[] }} props
  */
 export default function ExperienceList({ items }) {
-  const sortedExperience = [...items].sort(
-    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
-  )
+  const sortedExperience = [...items].sort((a, b) => {
+    const dateA = parseDateString(a.startDate)
+    const dateB = parseDateString(b.startDate)
+    return (dateB?.getTime() ?? 0) - (dateA?.getTime() ?? 0)
+  })
 
   /** @type {Set<number>} */
   const seenYears = new Set()
@@ -20,9 +23,9 @@ export default function ExperienceList({ items }) {
     <div className="experience__timeline" role="list">
       <div className="experience__line" aria-hidden="true" />
       {sortedExperience.map((exp, index) => {
-        const year = new Date(exp.startDate).getFullYear()
-        const showYearMarker = !seenYears.has(year)
-        seenYears.add(year)
+        const year = parseDateString(exp.startDate)?.getFullYear()
+        const showYearMarker = year !== undefined && !seenYears.has(year)
+        if (year !== undefined) seenYears.add(year)
 
         return (
           <div key={exp.id} role="listitem">

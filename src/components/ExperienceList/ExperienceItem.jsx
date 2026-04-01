@@ -1,4 +1,5 @@
 /** @import { ExperienceItem as ExperienceItemType } from '../../types/experience.js' */
+import { parseDateString } from '../../utils/experienceUtils.js'
 
 /**
  * Calculates a human-readable duration string between two dates.
@@ -8,8 +9,9 @@
  * @returns {string}
  */
 function getDuration(startDate, endDate) {
-  const start = new Date(startDate)
-  const end = endDate ? new Date(endDate) : new Date()
+  const start = parseDateString(startDate)
+  const end = endDate ? parseDateString(endDate) : new Date()
+  if (!start || !end) return ''
   const totalMonths =
     (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth())
   const years = Math.floor(totalMonths / 12)

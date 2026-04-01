@@ -6,6 +6,7 @@ import TechList from '../TechList/TechList.jsx'
 import profile from '../../data/profile.js'
 import experiences from '../../data/experience.js'
 import { educationItems, certifications } from '../../data/education.js'
+import { parseDateString } from '../../utils/experienceUtils.js'
 import './CV.css'
 
 const GitHubIcon = () => (
@@ -163,8 +164,8 @@ export default function CV() {
             <ul className="cv__edu-list">
               {[...educationItems]
                 .sort((a, b) => {
-                  const aYear = a.endDate ? new Date(a.endDate).getTime() : Infinity
-                  const bYear = b.endDate ? new Date(b.endDate).getTime() : Infinity
+                  const aYear = a.endDate ? parseDateString(a.endDate)?.getTime() ?? -Infinity : Infinity
+                  const bYear = b.endDate ? parseDateString(b.endDate)?.getTime() ?? -Infinity : Infinity
                   return bYear - aYear
                 })
                 .map((edu) => {
