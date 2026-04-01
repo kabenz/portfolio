@@ -4,26 +4,6 @@
 
 const projects = [
   {
-    id: "aks-platform-bootstrapper",
-    name: "AKS Platform Bootstrapper",
-    description:
-      "Production-ready Terraform + Helm framework that provisions a fully configured AKS cluster with GitOps, observability, and security baked in — going from zero to a developer-ready platform in under 30 minutes.",
-    repoUrl: "https://github.com/kabenz/aks-platform-bootstrapper",
-    demoUrl: null,
-    technologies: ["Azure", "AKS", "Kubernetes", "Terraform", "Helm", "FluxCD", "Prometheus", "Grafana", "GitHub Actions"],
-    responsibilities: [
-      "Designed a modular Terraform codebase provisioning AKS, Azure Container Registry, Key Vault, and networking from scratch.",
-      "Bootstrapped FluxCD for GitOps-driven workload delivery, eliminating manual kubectl apply workflows.",
-      "Integrated kube-prometheus-stack via Helm for out-of-the-box metrics, alerting, and Grafana dashboards.",
-      "Built a GitHub Actions CI pipeline to validate Terraform plans and Helm charts on every pull request.",
-    ],
-    outcomes: [
-      "Reduced new-cluster setup time from 2–3 days of manual work to under 30 minutes with a single terraform apply.",
-      "Standardised the platform baseline used across multiple client environments, cutting configuration drift incidents to zero.",
-      "Enabled product teams to onboard to the platform independently via self-service Helm chart templates.",
-    ],
-  },
-  {
     id: "at-data-hub",
     name: "AT Data Hub",
     description:
