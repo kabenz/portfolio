@@ -3,10 +3,10 @@ import profile from '../../data/profile.js'
 import './About.css'
 
 const highlights = [
-  { icon: '🚀', title: 'Automation First', desc: 'CI/CD with GitHub Actions and Azure Pipelines — eliminating toil and accelerating delivery' },
-  { icon: '☁️', title: 'Azure Expert', desc: 'Deep hands-on experience with Azure services, AKS, and cloud-native architectures' },
-  { icon: '🔒', title: 'Security & Reliability', desc: 'GitOps with FluxCD, zero-downtime deployments, and robust observability with Prometheus & Grafana' },
-  { icon: '🤝', title: 'Platform Builder', desc: 'Building self-service developer platforms on Kubernetes with Helm, Terraform, and Cloudflare' },
+  { icon: '🚀', title: 'Automation at Scale', desc: 'Designed and standardised CI/CD patterns for 30+ product teams, slashing pipeline onboarding from days to under 2 hours' },
+  { icon: '☁️', title: 'Cloud-Native Expert', desc: 'Deep hands-on experience with Azure, AKS, and Kubernetes — architecting multi-team developer platforms that scale with the business' },
+  { icon: '💰', title: 'Cost Optimisation', desc: 'Delivered measurable cloud and infrastructure cost reductions through right-sizing, auto-scaling, and FinOps-aligned platform design' },
+  { icon: '🤝', title: 'Technical Leadership', desc: 'Mentoring engineers, driving platform adoption, and leading PoCs that become production standards — moving towards a Lead/Staff role' },
 ]
 
 export default function About() {
@@ -36,7 +36,7 @@ export default function About() {
           <p className="section-label">About Me</p>
           <h2 className="section-title">The Engineer Behind the Platform</h2>
           <p className="section-subtitle">
-            DevOps & Cloud professional passionate about building reliable, scalable infrastructure
+            Senior DevOps & Platform Engineer passionate about scalable infrastructure, developer experience, and cloud cost efficiency
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function About() {
             <div className="about__quick-facts">
               <div className="about__fact">
                 <span className="about__fact-icon">📍</span>
-                <span>Leiria, Portugal</span>
+                <span>{profile.location}</span>
               </div>
               {/* <div className="about__fact">
                 <span className="about__fact-icon">💼</span>
@@ -92,10 +92,11 @@ export default function About() {
               {profile.summary}
             </p>
             <p className="about__bio">
-              I work daily with Kubernetes, Helm, Terraform, FluxCD, and Azure. I automate
-              everything with GitHub Actions, Azure Pipelines, Python, Bash, and PowerShell,
+              I work daily with Kubernetes, Helm, Terraform, FluxCD, and Azure — and I&apos;m actively expanding into AWS.
+              I automate everything with GitHub Actions, Azure Pipelines, Python, Bash, and PowerShell,
               and I keep systems observable with Prometheus, Grafana, and the ELK stack.
-              Backend and frontend skills in Go and JavaScript round out my toolkit.
+              I care about cost efficiency as much as reliability: right-sized infrastructure and smart scaling decisions
+              are part of how I deliver value. Backend and frontend skills in Go and JavaScript round out my toolkit.
             </p>
 
             <div className="about__highlights">

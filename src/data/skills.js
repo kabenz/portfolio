@@ -4,6 +4,7 @@
 const skills = [
   // Cloud & Infrastructure
   { name: 'Azure',            category: 'cloud', level: 'expert',       featured: true,  icon: '🔷' },
+  { name: 'AWS',              category: 'cloud', level: 'intermediate', featured: true,  icon: '🟠' },
   { name: 'Kubernetes (AKS)', category: 'cloud', level: 'expert',       featured: true,  icon: '⎈'  },
   { name: 'Terraform',        category: 'cloud', level: 'expert',       featured: true,  icon: '🏗️' },
   { name: 'Docker',           category: 'cloud', level: 'expert',       featured: true,  icon: '🐋' },
@@ -13,15 +14,15 @@ const skills = [
   // CI/CD & GitOps
   { name: 'GitHub Actions',       category: 'cicd', level: 'expert',   featured: true,  icon: '🐙' },
   { name: 'Azure Pipelines',      category: 'cicd', level: 'expert',   featured: true,  icon: '🔵' },
-  { name: 'YAML',                 category: 'cicd', level: 'expert',   featured: true, icon: '📄' },
-  { name: 'FluxCD',               category: 'cicd', level: 'advanced', featured: false, icon: '🚀' },
+  { name: 'FluxCD',               category: 'cicd', level: 'advanced', featured: true,  icon: '🚀' },
+  { name: 'YAML',                 category: 'cicd', level: 'expert',   featured: false, icon: '📄' },
   { name: 'Prometheus / Grafana', category: 'cicd', level: 'expert',   featured: false, icon: '📊' },
   { name: 'ELK Stack',            category: 'cicd', level: 'advanced', featured: false, icon: '🔍' },
 
   // Languages & Scripting
-  { name: 'Python',      category: 'languages', level: 'advanced', featured: true,  icon: '🐍' },
-  { name: 'Bash',        category: 'languages', level: 'expert',   featured: true,  icon: '🖥️' },
-  { name: 'PowerShell',  category: 'languages', level: 'advanced', featured: false, icon: '💠' },
+  { name: 'Python',      category: 'languages', level: 'advanced',     featured: true,  icon: '🐍' },
+  { name: 'Bash',        category: 'languages', level: 'expert',       featured: true,  icon: '🖥️' },
+  { name: 'PowerShell',  category: 'languages', level: 'advanced',     featured: false, icon: '💠' },
   { name: 'Go',          category: 'languages', level: 'intermediate', featured: false, enthusiast: true, icon: '🐹' },
   { name: 'JavaScript',  category: 'languages', level: 'intermediate', featured: false, enthusiast: true, icon: '🟨' },
   { name: 'React',       category: 'framework', level: 'intermediate', featured: false, enthusiast: true, icon: '⚛️' },

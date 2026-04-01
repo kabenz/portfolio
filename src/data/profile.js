@@ -8,15 +8,15 @@ const yearsOfExperience = calculateYearsOfExperience(experiences)
 /** @type {Profile} */
 const profile = {
   fullName: 'José Perdigão',
-  headline: 'Platform Engineer',
+  headline: 'Senior Platform & DevOps Engineer',
   email: 'zeperdigao.95@gmail.com',
   linkedin: 'https://linkedin.com/in/jose-perdigao/',
   github: 'https://github.com/kabenz',
   summary:
-    `Platform Engineer with ${yearsOfExperience}+ years of experience designing and operating cloud-native infrastructure on Azure. ` +
-    "Core focus is Platform Engineering — building the internal tooling, GitOps workflows, and Kubernetes-based platforms " +
-    "that let product teams ship with confidence and without ops friction.",
-  location: 'Portugal',
+    `Senior Platform & DevOps Engineer with ${yearsOfExperience}+ years of experience designing and operating cloud-native infrastructure at scale. ` +
+    "I specialise in building internal developer platforms, GitOps workflows, and Kubernetes-based foundations " +
+    "that empower 30+ product teams to ship reliably and independently — while keeping infrastructure costs under control.",
+  location: 'Lisbon, Portugal',
   address: 'Lisbon, Portugal',
   phone: '+351 924 222 223',
 
@@ -30,7 +30,7 @@ const profile = {
     address: 'cv',
     phone: 'cv',
   },
-  status: 'Open to interesting opportunities',
+  status: 'Open to Senior / Lead DevOps & Platform Engineering roles',
   /**
    * Path to the profile photo.
    * Replace src/assets/profile.svg with your photo (e.g. src/assets/profile.jpg),
