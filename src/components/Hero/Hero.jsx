@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import profile from '../../data/profile.js'
+import experiences from '../../data/experience.js'
+import { calculateYearsOfExperience } from '../../utils/experienceUtils.js'
 import './Hero.css'
 
 const ROLE = 'Platform Engineer'
+const yearsOfExperience = calculateYearsOfExperience(experiences)
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('')
@@ -114,7 +117,7 @@ export default function Hero() {
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-value">7+</span>
+            <span className="hero__stat-value">{yearsOfExperience}+</span>
             <span className="hero__stat-label">Years Experience</span>
           </div>
         </div>

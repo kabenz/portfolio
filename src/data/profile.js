@@ -1,5 +1,9 @@
 /** @import { Profile } from '../types/profile.js' */
 import profilePhoto from '../assets/profile.jpg'
+import experiences from './experience.js'
+import { calculateYearsOfExperience } from '../utils/experienceUtils.js'
+
+const yearsOfExperience = calculateYearsOfExperience(experiences)
 
 /** @type {Profile} */
 const profile = {
@@ -9,7 +13,7 @@ const profile = {
   linkedin: 'https://linkedin.com/in/jose-perdigao/',
   github: 'https://github.com/kabenz',
   summary:
-    "Platform Engineer with 7+ years of experience designing and operating cloud-native infrastructure on Azure. " +
+    `Platform Engineer with ${yearsOfExperience}+ years of experience designing and operating cloud-native infrastructure on Azure. ` +
     "Core focus is Platform Engineering — building the internal tooling, GitOps workflows, and Kubernetes-based platforms " +
     "that let product teams ship with confidence and without ops friction.",
   location: 'Portugal',
