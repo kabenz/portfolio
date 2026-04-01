@@ -3,6 +3,21 @@
 const MONTHS_PER_YEAR = 12
 
 /**
+ * Parses a date string in 'MMM YYYY' format (e.g. 'Jul 2024') into a Date object.
+ *
+ * @param {string} dateStr
+ * @returns {Date|null} Parsed Date, or null if the string is not in the expected format
+ */
+function parseDateString(dateStr) {
+  if (!dateStr || typeof dateStr !== 'string') return null
+  const parts = dateStr.trim().split(' ')
+  if (parts.length !== 2) return null
+  const [month, year] = parts
+  const date = new Date(`${month} 1, ${year}`)
+  return isNaN(date.getTime()) ? null : date
+}
+
+/**
  * Calculates total years of professional experience based on the earliest
  * start date across all experience entries.
  *
@@ -12,9 +27,13 @@ const MONTHS_PER_YEAR = 12
 export function calculateYearsOfExperience(experiences) {
   if (!experiences || experiences.length === 0) return 0
 
-  const earliest = experiences
-    .map(exp => new Date(exp.startDate))
-    .reduce((min, date) => date < min ? date : min)
+  const dates = experiences
+    .map(exp => parseDateString(exp.startDate))
+    .filter(date => date !== null)
+
+  if (dates.length === 0) return 0
+
+  const earliest = dates.reduce((min, date) => date < min ? date : min)
 
   const now = new Date()
   const totalMonths =
