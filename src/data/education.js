@@ -33,20 +33,6 @@ export const educationItems = [
 /** @type {CertificationItem[]} */
 export const certifications = [
   {
-    id: 'cka-kubernetes',
-    name: 'CKA: Certified Kubernetes Administrator',
-    issuer: 'Cloud Native Computing Foundation (CNCF)',
-    field: 'Kubernetes & Cloud Native',
-    date: 'In Progress',
-  },
-  {
-    id: 'microsoft-az104',
-    name: 'AZ-104: Microsoft Azure Administrator',
-    issuer: 'Microsoft',
-    field: 'Cloud Computing',
-    date: 'In Progress',
-  },
-  {
     id: 'microsoft-az900',
     name: 'AZ-900: Microsoft Azure Fundamentals',
     issuer: 'Microsoft',
