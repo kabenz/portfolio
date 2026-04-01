@@ -4,7 +4,7 @@ import experiences from '../../data/experience.js'
 import { calculateYearsOfExperience } from '../../utils/experienceUtils.js'
 import './Hero.css'
 
-const ROLE = 'Platform Engineer'
+const ROLE = 'Senior Platform & DevOps Engineer'
 const yearsOfExperience = calculateYearsOfExperience(experiences)
 
 export default function Hero() {
@@ -107,13 +107,13 @@ export default function Hero() {
 
         <div className="hero__stats fade-in visible">
           <div className="hero__stat">
-            <span className="hero__stat-value">Azure</span>
-            <span className="hero__stat-label">Primary Cloud</span>
+            <span className="hero__stat-value">30+</span>
+            <span className="hero__stat-label">Teams Enabled</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
             <span className="hero__stat-value">50+</span>
-            <span className="hero__stat-label">Pipelines Automated</span>
+            <span className="hero__stat-label">Pipelines Built</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
